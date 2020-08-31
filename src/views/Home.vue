@@ -1,18 +1,63 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <router-view></router-view>
+    <van-tabbar 
+      v-model="active" 
+      active-color="orange" 
+      inactive-color="#000" 
+      z-index="10"
+      route
+      placeholder
+      @change="onChange">
+      <van-tabbar-item 
+        :icon="item.icon" 
+        v-for="(item, index) in tabList" 
+        :key="index"
+        :to="item.to"
+      >{{ item.label }}</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      active: 0,
+      tabList: [
+        {
+          icon: 'home-o',
+          label: '首页',
+          to: '/index'
+        },
+        {
+          icon: 'search',
+          label: 'SHOW',
+          to: '/show'
+        },
+        {
+          icon: 'search',
+          label: '商品',
+          to: '/commodity'
+        },
+        {
+          icon: 'friends-o',
+          label: '体验',
+          to: '/experience'
+        },
+        {
+          icon: 'setting-o',
+          label: '我的',
+          to: '/my'
+        }
+      ]
+    };
+  },
+  methods: {
+    onChange(index) {
+      
+    }
   }
-}
+};
 </script>
+<style lang='sass' scoped></style>
