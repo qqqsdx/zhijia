@@ -2,25 +2,56 @@
     <div class="theme">
         <h3>主题推荐</h3>
         <div class="theme-recommend">
-            <div class="recommends" v-for="(item, index) in 4" :key="index">
+            <div class="recommends" v-for="(item, index) in zhutiList" :key="index">
                 <div class="recommends-left">
-                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2281527570,819906317&fm=26&gp=0.jpg" alt="">
+                    <img :src="item.left.imgs" alt="">
                     <div class="recommends-left-name">
-                        <h5>沙发</h5>
-                        <span>sofa</span>
+                        <h5>{{item.left.name}}</h5>
+                        <span>{{item.left.ename}}</span>
                     </div>
                 </div>
                 <div class="recommends-right">
-                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2606282915,3994745661&fm=26&gp=0.jpg" alt="">
+                    <img :src="item.right.imgs" alt="">
                     <div class="recommends-right-name">
-                        <h5>卫浴</h5>
-                        <span>bathroom</span>
+                        <h5>{{item.right.name}}</h5>
+                        <span>{{item.right.ename}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<script>
+// 导入图片
+import sofa  from '../../assets/img/zhuti/sofa.png'
+import bathroom  from '../../assets/img/zhuti/bathroom.png'
+import decorating  from '../../assets/img/zhuti/decorating.png'
+import kitchen  from '../../assets/img/zhuti/kitchen.png'
+import entrance  from '../../assets/img/zhuti/entrance.png'
+import rattan  from '../../assets/img/zhuti/rattan.png'
+import arts  from '../../assets/img/zhuti/arts.png'
+import cloakroom  from '../../assets/img/zhuti/cloakroom.png'
+import {getcomClassList} from '../../utils/api'
+export default {
+    data() {
+        return {
+            // zhutiList:[]
+        }
+    },
+    // async mounted(){
+    // let a=await getcomClassList();
+    // this.zhutiList=a.zhutiList
+    // }
+    computed: {
+        zhutiList () {
+            return this.$store.state.zhutiList
+        }
+    },
+    mounted() {
+        this.$store.dispatch('getComClassLists')
+    },
+}
+</script>
 <style lang='scss' scoped>
 .theme{
     width: 90%;
@@ -49,9 +80,9 @@
                 align-items: center;
                 border-right: 1px solid #f5f5f5;
                 img{
-                    width: 50%;
+                    width: 40%;
                     height: 90%;
-                    margin-left: 5px;
+                    margin-left: 15px;
                 }
                 .recommends-left-name{
                     width: 100%;
@@ -78,7 +109,7 @@
                 img{
                     width: 50%;
                     height: 90%;
-                    margin-left: 5px;
+                    margin-left: 15px;
                 }
                 .recommends-right-name{
                     width: 100%;

@@ -6,20 +6,20 @@
                     <img :src="item.url" alt="">
                 </van-swipe-item>
             </van-swipe>
-            <Sections/>
-            <Sections/>
+            <Sections :list='seckill'/>
+            <Sections :list='newproduct'/>
             <van-grid :border='false'>
-                <van-grid-item icon="photo-o" text="设计服务" />
-                <van-grid-item icon="photo-o" text="免费送装" />
-                <van-grid-item icon="photo-o" text="质量保证" />
-                <van-grid-item icon="photo-o" text="安全环保" />
+                <van-grid-item icon="edit" text="设计服务" />
+                <van-grid-item icon="logistics" text="免费送装" />
+                <van-grid-item icon="completed" text="质量保证" />
+                <van-grid-item icon="thumb-circle-o" text="安全环保" />
             </van-grid>
             <van-divider />
             <Theme/>
             <Slideimg titles="至家新品"/>
             <Slideimg titles="现货推荐"/>
             <Choiceness/>
-            <Products/>
+            <Sel/>
         </main>
     </div>
 </template>
@@ -28,7 +28,12 @@ import Sections from './section'
 import Theme from './theme'
 import Slideimg from './slideimg'
 import Choiceness from './choiceness'
-import Products from './products'
+import Sel from './selectedbibliography'
+// 引入图片
+import sect from '../../assets/img/seckillbig.png'
+import secb from '../../assets/img/seckillmin1.png'
+import nprot from '../../assets/img/new productmin.png'
+import nprob from '../../assets/img/seckillmin1.png'
 export default {
     data() {
         return {
@@ -42,7 +47,19 @@ export default {
                 {
                     url:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3518923070,3805890162&fm=11&gp=0.jpg'
                 }
-            ]
+            ],
+            seckill:
+                {
+                    img1:sect,
+                    img2:secb
+                }
+            ,
+            newproduct: 
+                {
+                    img1:nprot,
+                    img2:nprob
+                }
+            
         }
     },
     components:{
@@ -50,7 +67,7 @@ export default {
         Theme,
         Slideimg,
         Choiceness,
-        Products
+        Sel
     }
 }
 </script>

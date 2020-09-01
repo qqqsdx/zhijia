@@ -16,6 +16,22 @@ const routes = [
           path: '/index',
           component: () => import('../views/index.vue'),
         },
+        {
+          path: '/show',
+          component: () => import('../views/show.vue'),
+        },
+        {
+          path: '/commodity',
+          component: () => import('../views/commoditys.vue'),
+        },
+        {
+          path: '/experience',
+          component: () => import('../views/experience.vue'),
+        },
+        {
+          path: '/my',
+          component: () => import('../views/my.vue'),
+        },
       ]
     },
     // {

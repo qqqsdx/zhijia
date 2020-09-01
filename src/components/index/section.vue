@@ -1,13 +1,20 @@
 <template>
     <div class="section">
-        <div class="section-top"></div>
+        <div class="section-top">
+            <img :src="list.img1" alt="">
+        </div>
         <div class="section-bom">
-            <div class="bom"></div>
-            <div class="bom"></div>
+            <img :src="list.img2" alt="">
         </div>
     </div>
 </template>
-
+<script>
+export default {
+    props:{
+        list:Object
+    }
+}
+</script>
 <style lang='scss' scoped>
         .section{
             width: 100%;
@@ -16,10 +23,13 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            img{
+                width: 100%;
+                height: 100%;
+            }
             .section-top{
-                width: 90%;
+                width: 100%;
                 height: 47%;
-                border: 1px solid black;
                 border-radius: 10px;
                 margin-top: 8px;
             }
@@ -30,12 +40,6 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                .bom{
-                    width: 48%;
-                    height: 90%;
-                    border: 1px solid black;
-                    border-radius: 4%;
-                }
             }
         }
 </style>

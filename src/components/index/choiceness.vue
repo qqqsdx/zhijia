@@ -1,7 +1,9 @@
 <template>
     <div class="choiceness">
         <h3>精选体验家</h3>
-        <div class="choiceness-top"></div>
+        <div class="choiceness-top">
+            <img src="../../assets/img/jxzhijia.png" alt="">
+        </div>
         <van-swipe @change="onChange" :loop='false' :show-indicators='false' :width="152">
             <van-swipe-item v-for="(item, index) in slideImg" :key="index">
                 <img :src="item.img">
@@ -55,12 +57,15 @@ export default {
         line-height: 30px;
     } 
     .choiceness-top{
-                width: 80%;
-                height: 105px;
-                border: 1px solid black;
-                border-radius: 10px;
-                margin-top: 8px;
-                margin: auto;
+        width: 80%;
+        height: 105px;
+        border-radius: 10px;
+        margin-top: 8px;
+        margin: auto;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .van-swipe{
         margin-top: 10px;
