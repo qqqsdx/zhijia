@@ -1,61 +1,44 @@
 <template>
-    <div class="slideimg">
-        <h3>{{titles}}</h3>
-        <div class="slide-img">
-            <van-swipe @change="onChange" :loop='false' :show-indicators='false' :width="300">
+    <div class="choiceness">
+        <h3>精选体验家</h3>
+        <div class="choiceness-top"></div>
+        <van-swipe @change="onChange" :loop='false' :show-indicators='false' :width="152">
             <van-swipe-item v-for="(item, index) in slideImg" :key="index">
                 <img :src="item.img">
                 <div class="title">{{item.title}}</div>
-                <span>{{item.tex}}</span>
             </van-swipe-item>
-            <div class="qqq" v-if="current==5"></div>
-            </van-swipe>
-            <template >
-                <div class="custom-indicator">
-                {{ current + 1 }}/5
-                </div>
-            </template>
-        </div>
+        </van-swipe>
     </div>
 </template>
 <script>
 export default {
-  props:{
-    titles:String
-  },
-  data() {
-    return {
-      current: 0,
-      slideImg:[
+    data() {
+        return {
+            slideImg:[
         {
             img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=919663030,1946386614&fm=26&gp=0.jpg',
-            title:'CODA床 | 黑金色调',
-            tex:'中性风格 | 奢品触感 | 质感鲜明'
+            title:'人生不一定单调',
         },
         {
             img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2496186521,2393687524&fm=26&gp=0.jpg',
-            title:'芒果木电视柜 | 水泥嵌铜',
-            tex:'现代简约风格 | 便于散热 | 开放式层架'
+            title:'人生不一定单调',
         },
         {
             img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3520981349,3793838560&fm=26&gp=0.jpg',
-            title:'百搭布艺沙发 | 双面可拆洗',
-            tex:'百搭布艺沙发 | 双面可拆洗 '
+            title:'人生不一定单调',
         },
         {
             img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2633066983,272223045&fm=26&gp=0.jpg',
-            title:'储物收纳化妆桌 | 亚克力...',
-            tex:'存储空间大 | 承重稳固耐用 | 美观实用'
+            title:'人生不一定单调',
         },
         {
             img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2424542906,3388794067&fm=26&gp=0.jpg',
-            title:'镜子置物盒 | 小清新收纳盒',
-            tex:'轻松拿取 | 智能双控 | 舒适把手'
+            title:'人生不一定单调',
         }
       ]
-    };
-  },
-  methods: {
+        }
+    },
+    methods: {
     onChange(index) {
       this.current = index;
     },
@@ -63,7 +46,7 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.slideimg{
+.choiceness{
     width: 100%;
     position: relative;
     h3{
@@ -71,14 +54,17 @@ export default {
         text-align: left;
         line-height: 30px;
     } 
-    .qqq{
-      width: 15%;
-      height: 100%;
-    }  
-    .slide-img{    
-    height: 180px;
+    .choiceness-top{
+                width: 80%;
+                height: 105px;
+                border: 1px solid black;
+                border-radius: 10px;
+                margin-top: 8px;
+                margin: auto;
+    }
     .van-swipe{
-        height: 100%;
+        margin-top: 10px;
+        height:105px;
         padding-left: 9%;
         padding-right: 9%;
         img{
@@ -109,7 +95,6 @@ export default {
     padding: 2px 5px;
     font-size: 16px;
     }
-  }
 }
 
 </style>

@@ -18,6 +18,8 @@
             <Theme/>
             <Slideimg titles="至家新品"/>
             <Slideimg titles="现货推荐"/>
+            <Choiceness/>
+            <Products/>
         </main>
     </div>
 </template>
@@ -25,6 +27,8 @@
 import Sections from './section'
 import Theme from './theme'
 import Slideimg from './slideimg'
+import Choiceness from './choiceness'
+import Products from './products'
 export default {
     data() {
         return {
@@ -44,7 +48,9 @@ export default {
     components:{
         Sections,
         Theme,
-        Slideimg
+        Slideimg,
+        Choiceness,
+        Products
     }
 }
 </script>
