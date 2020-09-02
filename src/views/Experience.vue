@@ -13,29 +13,29 @@
         </div>
         <section class="head">
             <article class="heads">
-                <div v-for="(item,index) in 2" 
-                :key="index"
-                class="van-hairline--surround"
-                >
-                <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg" alt="">
+                <div class="van-hairline--surround">
+                <img :src="img1" alt="">
+                </div>
+                <div class="van-hairline--surround">
+                <img :src="img2" alt="">
                 </div>
             </article>
             <!--hommey 798  -->
             <article class="hommey">
                 <span class="lab">Hommey Lab.798</span>
                 <p>至家首家线下体验店</p>
-                <div class="lun">
-                    <van-swipe class="my-swipe"  >
-                        <van-swipe-item v-for="(item,index) in list" :key="index">
-                            <img :src="item.url" alt="">
-                            <div>{{item.title}}</div>
-                        </van-swipe-item>
-                          <template #indicator>
-                            <div class="custom-indicator">
-                            </div>
-                        </template>
-                    </van-swipe> 
-                </div>
+            <div class="lun">
+                <van-swipe :loop="false" :width="155">
+                    <van-swipe-item v-for="(item,index) in list" :key="index">
+                                <img :src="item.url" alt="">
+                                <div class="titles">{{item.title}}</div>
+                    </van-swipe-item>
+                <template #indicator>
+                        <div class="custom-indicator">
+                        </div>
+                </template>
+                </van-swipe>
+            </div>
             
             </article>
             <!-- 体验家 -->
@@ -48,15 +48,21 @@
     </div>
 </template>
 <script>
+import img1 from '../assets/images/tu1.png'
+import img2 from '../assets/images/tu2.png'
+import img3 from '../assets/images/tu3.png'
+import img4 from '../assets/images/tu4.png'
 import family from '../components/experience/family'
 export default {
     data(){
         return{
+           img1:img1,
+           img2:img2,
             list:[
-                {url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg',title:'不同的人生，不同的颜色'},
-                {url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg',title:'不同的人生，不同的颜色'},
-                {url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg',title:'不同的人生，不同的颜色'},
-                {url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg',title:'不同的人生，不同的颜色'},
+                {url:img3,title:'不同的人生，不同的颜色'},
+                {url:img4,title:'不同的人生，不同的颜色'},
+                {url:img3,title:'不同的人生，不同的颜色'},
+                {url:img4,title:'不同的人生，不同的颜色'},
             ]
         }
     },
@@ -66,6 +72,7 @@ export default {
 
 }
 </script>
+
 <style lang="scss" scoped>
 @import "../assets/style/a.css";
  .experi {
@@ -124,10 +131,6 @@ export default {
             flex-direction: column;
             align-items:flex-start;
             margin-top: 46px;
-            .lun{
-                margin-top: 12px;
-                width:100%;
-            }
             
            .lab{
                 float: left;
@@ -155,10 +158,34 @@ export default {
         img{
             height: 99px;
         }
-        div{
+        .title{
             color: #999999;
             font-size: 13px;
         }
     }
+    .lun{
+        width: 100%;
+        .van-swipe{
+            margin-top: 12px;
+            width: 100%;
+            .van-swipe-item{
+                width: 151px;
+                height: 120px;
+                margin-right: 10px;
+                  .titles{
+                    font-size: 13px;
+                    color: #999999;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    white-space:nowrap
+                }
+                img{
+                    width: 100%;
+                    height: 99px;
+                }
+            }
+        }
+    }
+    
 
 </style>

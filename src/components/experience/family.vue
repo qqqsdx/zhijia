@@ -7,21 +7,30 @@
                     <van-dropdown-item v-model="value2" :options="option2" />
                     <van-dropdown-item v-model="value3" :options="option3" />
                 </van-dropdown-menu>
-                <div class="f-img">
-                <van-grid :border="false" >
-                    <van-image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1825239948,3071618269&fm=26&gp=0.jpg" />
-                    <van-grid-item  text="" />
-                    <van-grid-item  text="文字" />
-                </van-grid>
+                <div class="f-img" v-for="(item,index) in imglist" 
+                :key="index" >
+                    <img :src="item.imgl">
+                    <div class="caption">
+                        <h2>{{item.title}}</h2>
+                        <p>{{item.One}}</p>
+                    </div>
+                   <div class="tou">
+                       <img :src="item.imgs" alt="">
+                   </div>
+                   <span class="ren">{{item.think}}</span>
+                  
                 </div>
             </article>
 
 </template>
 
 <script>
+import img from '../../assets/images/toux.png'
+import img5 from '../../assets/images/tu5.png'
 export default {
     data(){
         return{
+            img:img,
             value1: 0,
             value2: 'a',
             value3:'a',
@@ -40,6 +49,35 @@ export default {
                 { text: '好评排序', value: 'b' },
                 { text: '销量排序', value: 'c' },
             ],
+            imglist:[{
+                imgl:img5,
+                imgs:img,
+                title:'Siri Sun的体验家',
+                One:'现代一室一厅。108',
+                think:'67人想体验'
+            },
+            {
+                imgl:img5,
+                imgs:img,
+                title:'Siri Sun的体验家',
+                One:'现代一室一厅。108',
+                think:'67人想体验'
+            },
+            {
+                imgl:img5,
+                imgs:img,
+                title:'Siri Sun的体验家',
+                One:'现代一室一厅。108',
+                think:'67人想体验'
+            },
+            {
+                imgl:img5,
+                imgs:img,
+                title:'Siri Sun的体验家',
+                One:'现代一室一厅。108',
+                think:'67人想体验'
+            },
+            ]
         }
     }
 }
@@ -59,15 +97,49 @@ export default {
                 color: #000000;
             }
             .f-img{
+                position: relative;
                 margin-top: 31px;
-                // img{
-                //     width: 313px;
-                //     height: 209px;
-                // }
+                img{
+                    width: 313px;
+                    height: 209px;
+                }
+                .tou{
+                    width: 44px;
+                    height: 47px;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 51px;
+                    bottom: 58px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                }
+            }
+            .ren{
+                float:right;
+                color: #9A9A9A;
+                font-size: 13px;
+                margin-right: 37px;
+                margin-top: 20px;
             }
         }
         .van-dropdown-menu{
             width: 100%;
+        }
+        .caption{
+            margin-top: 14px;
+            float: left;;
+            h2{
+                font-size: 17px;
+                color: #000000;
+            }
+            p{
+                margin-top: 12px;
+                color: #9A9A9A;
+                font-size: 13px;
+            }
         }
        
 </style>
