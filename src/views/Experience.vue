@@ -145,7 +145,6 @@ export default {
         }
     
     }
- }
     .my-swipe .van-swipe-item {
         color: #fff;
         width: 151px;
@@ -160,5 +159,7 @@ export default {
             font-size: 13px;
         }
     }
+ }
+    
 
 </style>

@@ -226,6 +226,10 @@ export default {
     position: relative; 
     margin: auto;
     margin-top: 10%;
+    .van-tabs__wrap .van-tabs__line {
+        width: 15px;
+        background-color: #888888;
+    }
     .products-top{
         width: 100%;
         height: 105px;

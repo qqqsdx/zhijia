@@ -9,10 +9,13 @@
             <Sections :list='sck' />
             <Sections  :list='por'/>
             <van-grid :border='false' :icon-size='16'>
-                <van-grid-item icon="photo-o" text="设计服务" />
-                <van-grid-item icon="photo-o" text="免费送装" />
-                <van-grid-item icon="photo-o" text="质量保证" />
-                <van-grid-item icon="photo-o" text="安全环保" />
+                <van-grid-item
+                 :icon="item.icon"
+                 :text="item.text" 
+                 v-for="(item, index) in serves" 
+                 :key="index"
+                 @click="tolink(item)"
+                  />
             </van-grid>
             <van-divider />
             <Theme/>
@@ -56,7 +59,29 @@ export default {
             por:{
                 img1:por1,
                 img2:sck2
-            }
+            },
+            serves:[
+                {
+                    text:'设计服务',
+                    icon:'photo-o',
+                    ids:1
+                },
+                {
+                    text:'免费送装',
+                    icon:'photo-o',
+                    ids:2
+                },
+                {
+                    text:'质量保证',
+                    icon:'photo-o',
+                    ids:3
+                },
+                {
+                    text:'安全环保',
+                    icon:'photo-o',
+                    ids:4
+                },
+            ]
         }
     },
     components:{
@@ -65,6 +90,13 @@ export default {
         Slideimg,
         Choiceness,
         Products
+    },
+    methods:{
+        tolink(i){
+            this.$router.push({
+                path:`index/serve/${i.ids}`
+            })
+        }
     }
 }
 </script>
@@ -76,6 +108,7 @@ export default {
                 color: #fff;
                 font-size: 20px;
                 line-height: 240px;
+                width: 375px!important;
                 img{
                     width: 100%;
                     height: 240px;

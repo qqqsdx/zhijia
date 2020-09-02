@@ -7,27 +7,33 @@ const routes = [{
         path: '/',
         redirect: '/index'
     },
+    //--------------------------index服务页面子页面--------------------------------
+    {
+      path:'/index/serve/:id',
+      component: () => import('../components/index/serve/serves.vue'),
+    },
     {
       path: '/home',
       component: () => import('../views/Home.vue'),
       children: [
         {
-        //首页
+        // ------------------------------首页--------------------------------------
           path: '/index',
           component: () => import('../views/index.vue'),
         },
+        // ------------------------------show页面----------------------------------
         {
-        //第二个页面
+        //
           path: '/show',
           component: () => import('../views/show.vue'),
         },
-        //体验
+        //--------------------------------体验------------------------------------
         {
             path: '/experience',
             component: () =>
                 import ('../views/Experience.vue')
         },
-        //商品路由
+        //------------------------------商品路由----------------------------------------
         {
             path: '/commodity',
             redirect: '/commodity/content'
@@ -49,31 +55,32 @@ const routes = [{
             ]
         },
         {
-        //我的页面
+        // ---------------------------------我的页面--------------------------------
+        //
           path: '/my',
           component: () => import('../views/my.vue'),
         },
-    ]},
-    //下面是登录页的东西
-    {
-        path: '/logandreg',
-        component: () => import('../views/LogAndReg/default.vue'),
-      },
-      {
-        name: 'agreement',
-        path: '/logandreg/agreement',
-        component: () => import('../views/LogAndReg/agreement.vue'),
-      },
-      {
-        name: 'privacy',
-        path: '/logandreg/privacy',
-        component: () => import('../views/LogAndReg/privacy.vue'),
-      },
-      {
-        name: 'log',
-        path: '/logandreg/log',
-        component: () => import('../views/LogAndReg/log.vue'),
-      },
+        ]},
+        //---------------------------------下面是登录页的东西-----------------------
+        {
+            path: '/logandreg',
+            component: () => import('../views/LogAndReg/default.vue'),
+          },
+          {
+            name: 'agreement',
+            path: '/logandreg/agreement',
+            component: () => import('../views/LogAndReg/agreement.vue'),
+          },
+          {
+            name: 'privacy',
+            path: '/logandreg/privacy',
+            component: () => import('../views/LogAndReg/privacy.vue'),
+          },
+          {
+            name: 'log',
+            path: '/logandreg/log',
+            component: () => import('../views/LogAndReg/log.vue'),
+          },
     // {
     //   path: '/detail/:id',
     //   component: () => import('../views/Detail.vue')

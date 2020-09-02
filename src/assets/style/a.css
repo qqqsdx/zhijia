@@ -1,8 +1,8 @@
-.van-swipe-item {
+.experi .van-swipe-item {
     width: 170px !important;
 }
 
-.van-dropdown-menu__title::after {
+.experi .van-dropdown-menu__title::after {
     position: absolute;
     top: 50%;
     right: -0.10667rem;
@@ -15,12 +15,12 @@
     content: '';
 }
 
-.van-image {
+.experi .van-image {
     width: 313px;
     height: 209px;
 }
 
-.van-grid {
+.experi .van-grid {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
