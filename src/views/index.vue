@@ -6,8 +6,10 @@
 </template>
 
 <script>
+console.log(1);
 import Nav from '../components/public/nav'//导航
 import Mains from '../components/index/mains'//可以滑动的主体部分
+
 export default {
   data() {
     return {};

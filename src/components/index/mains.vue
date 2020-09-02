@@ -6,8 +6,8 @@
                     <img :src="item.url" alt="">
                 </van-swipe-item>
             </van-swipe>
-            <Sections/>
-            <Sections/>
+            <Sections :list='sck' />
+            <Sections  :list='por'/>
             <van-grid :border='false'>
                 <van-grid-item icon="photo-o" text="设计服务" />
                 <van-grid-item icon="photo-o" text="免费送装" />
@@ -29,6 +29,12 @@ import Theme from './theme'
 import Slideimg from './slideimg'
 import Choiceness from './choiceness'
 import Products from './products'
+
+// 引入图片
+import sck1 from '../../assets/img/seckillbig.png'
+import sck2 from '../../assets/img/seckillmin1.png'
+// import por2 from '../../assets/img/new por.png'
+import por1 from '../../assets/img/new productmin.png'
 export default {
     data() {
         return {
@@ -42,7 +48,15 @@ export default {
                 {
                     url:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3518923070,3805890162&fm=11&gp=0.jpg'
                 }
-            ]
+            ],
+            sck:{
+                img1:sck1,
+                img2:sck2
+            },
+            por:{
+                img1:por1,
+                img2:sck2
+            }
         }
     },
     components:{

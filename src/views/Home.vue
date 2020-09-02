@@ -31,12 +31,12 @@ export default {
           to: '/index'
         },
         {
-          icon: 'search',
+          icon: 'edit',
           label: 'SHOW',
           to: '/show'
         },
         {
-          icon: 'search',
+          icon: 'apps-o',
           label: '商品',
           to: '/commodity'
         },
@@ -46,7 +46,7 @@ export default {
           to: '/experience'
         },
         {
-          icon: 'setting-o',
+          icon: 'manager-o',
           label: '我的',
           to: '/my'
         }
@@ -54,10 +54,9 @@ export default {
     };
   },
   methods: {
-    onChange(index) {
-      
+    onChange(index) {  
     }
-  }
+  },
 };
 </script>
 <style lang='sass' scoped></style>

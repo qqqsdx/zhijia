@@ -70,6 +70,7 @@ export default {
         padding-left: 10%;
         text-align: left;
         line-height: 30px;
+        font-size: 24px;
     } 
     .qqq{
       width: 15%;
@@ -99,7 +100,7 @@ export default {
             margin-left: 15px;
             text-align: left;
             font-size: 12px;
-            color: #F5f5f5;
+            color: #C6C6C8;
         };
     }
     .custom-indicator {
