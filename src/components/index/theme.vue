@@ -56,11 +56,11 @@ export default {
 .theme{
     width: 90%;
     margin: 0 auto;
-    
     h3{
         padding-left: 10px;
         text-align: left;
         line-height: 30px;
+        font-size: 24px;
     }
     .theme-recommend{
         width: 100%;
@@ -92,6 +92,7 @@ export default {
                     justify-content: center;
                     h5{
                         margin: 0;
+                        font-size: 16px;
                     }
                     span{
                         margin-top: 2px;
@@ -119,6 +120,7 @@ export default {
                     justify-content: center;
                     h5{
                         margin: 0;
+                        font-size: 16px;
                     }
                     span{
                         margin-top: 2px;

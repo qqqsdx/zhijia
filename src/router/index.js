@@ -51,7 +51,7 @@ const routes = [{
         {
         //我的页面
           path: '/my',
-          component: () => import('../views/my.vue'),
+          component: () => import('../views/My.vue'),
         },
     ]},
     //下面是登录页的东西

@@ -10,11 +10,11 @@ var instance = axios.create({
   // *********************************************************
   // *********************************************************
   // *********************************************************
-  baseURL: 'https://www.fastmock.site/mock/f27c07245db9a2f12f64f27581d3d532/zhijia',
+  baseURL: 'https://www.fastmock.site/mock/e070517c435df42105d146a489edcd0a/zhijia',
   // 超时事件，在规定的时间内，如果没有请求到数据，就不请求了，返回错误信息
   timeout: 10000,
-  // 同意添加请求头信息
-  headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+  // // 同意添加请求头信息
+  // headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
 });
 
 // 添加请求拦截器
@@ -49,7 +49,7 @@ const http = {
         params: params
       }) // 相应的拦截
       .then(res => {
-        if (res.status === '0') {
+        if (res) {
           resolve(res)
         } else {
           Toast(res.msg)
@@ -67,7 +67,7 @@ const http = {
       // 引入一个qs的包
       instance.post(url, qs.stringify(params))
       .then((res) => {
-        if (res.status === '0') {
+        if (res) {
           resolve(res)
         } else {
           Toast(res.msg)

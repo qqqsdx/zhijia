@@ -70,6 +70,7 @@ export default {
         padding-left: 10%;
         text-align: left;
         line-height: 30px;
+        font-size: 24px;
     } 
     .qqq{
       width: 15%;
