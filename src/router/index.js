@@ -21,6 +21,12 @@ const routes = [{
           path: '/show',
           component: () => import('../views/show.vue'),
         },
+        //体验
+        {
+            path: '/experience',
+            component: () =>
+                import ('../components/experience/family.vue')
+        },
         //商品路由
         {
             path: '/commodity',
@@ -43,16 +49,12 @@ const routes = [{
             ]
         },
         {
-          path: '/experience',
-          component: () => import('../views/experience.vue'),
-        },
-        {
         //我的页面
           path: '/my',
           component: () => import('../views/my.vue'),
         },
-      ]
-    },
+    ]},
+    //下面是登录页的东西
     {
         path: '/logandreg',
         component: () => import('../views/LogAndReg/default.vue'),
