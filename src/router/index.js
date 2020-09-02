@@ -25,7 +25,7 @@ const routes = [{
         {
             path: '/experience',
             component: () =>
-                import ('../components/experience/family.vue')
+                import ('../views/Experience.vue')
         },
         //商品路由
         {
