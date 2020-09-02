@@ -19,7 +19,7 @@ const routes = [{
         {
         //第二个页面
           path: '/show',
-          component: () => import('../views/show.vue'),
+          component: () => import('../views/Show.vue'),
         },
         //体验
         {
@@ -79,10 +79,15 @@ const routes = [{
     //   component: () => import('../views/Detail.vue')
     // },
     {
+        path: '/more',
+        component: () =>
+            import ('../views/More.vue')
+    },
+    {
         path: '*',
         component: () =>
             import ('../views/Nofound404.vue'),
-    },
+    }
 ]
 
 const router = new VueRouter({
