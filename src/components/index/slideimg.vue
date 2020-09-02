@@ -99,7 +99,7 @@ export default {
             margin-left: 15px;
             text-align: left;
             font-size: 12px;
-            color: #F5f5f5;
+            color: #C6C6C8;
         };
     }
     .custom-indicator {

@@ -1,6 +1,8 @@
 <template>
     <div class="products">
-        <div class="products-top"></div>
+        <div class="products-top">
+            <img src="../../assets/img/sofa.png" alt="">
+        </div>
         <van-tabs active="a">
             <van-tab title="推荐" name="a">
                 <van-grid column-num="2" :border="false">
@@ -229,10 +231,13 @@ export default {
     .products-top{
         width: 100%;
         height: 105px;
-        border: 1px solid black;
         border-radius: 10px;
         margin-top: 8px;
         margin: auto;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .Warenauswahl{
         width: 50%;
