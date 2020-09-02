@@ -2,7 +2,13 @@
 <template>
     <div class="theme-container">
         <ul class="theme">
-            <li v-for="(item,index) in 16" :key="index" class="van-hairline--surround"></li>
+            <li v-for="(item,index) in 16" :key="index" class="van-hairline--surround">
+                <img src="" alt="">
+                <section>
+                    <p>卧室</p>
+                    <p>bedroom</p>
+                </section>
+            </li>
         </ul>
 
         <div class="recommended">
@@ -30,6 +36,21 @@
         li{
             width: 50%;
             height: 60px;
+            display: flex;
+            img{
+                // display: block;
+                width: 50%;
+                height: 100%;
+                border: 1px solid #000;
+            }
+            section{
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                font-size: 13px;
+            }
         }
     }
     .recommended{
@@ -49,7 +70,6 @@
             li{
                 width: 100%;
                 height: 200px;
-                // border: 1px solid black;
                 margin-bottom: 10px;
                 img{
                     width: 100%;
@@ -60,6 +80,7 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    font-size: 13px;
                 }
             }
         }

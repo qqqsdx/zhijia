@@ -23,8 +23,8 @@
                 color="black"
                 @click="onChange"
             >
-                <van-tab title="分类" class="font" ></van-tab>
-                <van-tab title="主题" class="font"></van-tab>
+                <van-tab title="分类"></van-tab>
+                <van-tab title="主题"></van-tab>
             </van-tabs>
         </div>
         <router-view></router-view>
@@ -59,7 +59,8 @@ export default {
             list: [],
             loading: false,
             finished: false,
-            active: 0
+            active: 0,
+            is:0
             // activeKey:0,
             // List:[
             //     {
@@ -98,7 +99,9 @@ export default {
 .commodity-container{
         .nav{
         width: 100%;
-        height: 30px;
+        height: 46px;
+        background: #fff;
+        z-index: 10;
         .van-search{
             width: 277px;
             height: 35px;
@@ -117,13 +120,10 @@ export default {
     }
     .tab{
         .van-tab__text{
-            font-size: 14px;
+            font-size: 15px;
         }
         .van-tabs__line{
-            border-radius: none;
-        }
-        .van-tabs__nav{
-
+            border-radius: 0;
         }
     }
 }
