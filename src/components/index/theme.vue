@@ -60,7 +60,8 @@ export default {
         padding-left: 10px;
         text-align: left;
         line-height: 30px;
-        font-size: 24px;
+        font-size: 19px;
+        margin-bottom: 32px;
     }
     .theme-recommend{
         width: 100%;
@@ -80,9 +81,9 @@ export default {
                 align-items: center;
                 border-right: 1px solid #f5f5f5;
                 img{
-                    width: 40%;
-                    height: 90%;
-                    margin-left: 15px;
+                    width: 57px;
+                    height: 35px;
+                    margin-left: 24px;
                 }
                 .recommends-left-name{
                     width: 100%;
@@ -93,11 +94,13 @@ export default {
                     h5{
                         margin: 0;
                         font-size: 16px;
+                        text-align: center;
                     }
                     span{
                         margin-top: 2px;
                         font-size: 12px;
-                        color: #f5f5f5;
+                        color: #A4A2AA;
+                        text-align: center;
                     }
                 }
             }
@@ -108,9 +111,9 @@ export default {
                 justify-content: left;
                 align-items: center;
                 img{
-                    width: 50%;
-                    height: 90%;
-                    margin-left: 15px;
+                    width: 57px;
+                    height: 35px;
+                    margin-left: 24px;
                 }
                 .recommends-right-name{
                     width: 100%;
@@ -121,11 +124,13 @@ export default {
                     h5{
                         margin: 0;
                         font-size: 16px;
+                        text-align: center;
                     }
                     span{
+                        text-align: center;
                         margin-top: 2px;
                         font-size: 12px;
-                        color: #f5f5f5;
+                        color:#A4A2AA;
                     }
                 }
             }

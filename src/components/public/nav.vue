@@ -2,7 +2,7 @@
     <div class="public-nav">
         <van-nav-bar  :fixed="true" >
             <template #right>
-                <van-icon name="search" size="18" />
+                <img src="../../assets/img/gouwuche.png" alt="">
             </template>
             <template #left>
                 <!-- 导航左搜索框 -->
@@ -21,6 +21,15 @@
                 color: #969799;
             }
         }
+    }
+    .van-search{
+        width: 277px;
+    }
+    .van-nav-bar__right{
+    img{
+        width: 16px;
+        height: 16px;
+    }
     }
 }
 </style>

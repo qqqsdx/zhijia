@@ -8,7 +8,7 @@
             </van-swipe>
             <Sections :list='sck' />
             <Sections  :list='por'/>
-            <van-grid :border='false'>
+            <van-grid :border='false' :icon-size='16'>
                 <van-grid-item icon="photo-o" text="设计服务" />
                 <van-grid-item icon="photo-o" text="免费送装" />
                 <van-grid-item icon="photo-o" text="质量保证" />
@@ -75,15 +75,15 @@ export default {
             .my-swipe .van-swipe-item {
                 color: #fff;
                 font-size: 20px;
-                line-height: 180px;
+                line-height: 240px;
                 img{
                     width: 100%;
-                    height: 180px;
+                    height: 240px;
                 }
             }
             .my-swipe{
                 width: 100%;
-                height: 180px;
+                height: 240px;
             }
         }
         .qqq{
@@ -115,6 +115,10 @@ export default {
                     border-radius: 4%;
                 }
             }
+        }
+        .van-grid{
+            width: 90%;
+            margin: auto;
         }
     }
 </style>
