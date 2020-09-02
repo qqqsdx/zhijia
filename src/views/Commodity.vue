@@ -122,9 +122,7 @@ export default {
         .van-tabs__line{
             border-radius: none;
         }
-        .van-tabs__nav{
-
-        }
+        
     }
 }
 
