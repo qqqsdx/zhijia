@@ -19,7 +19,7 @@ const routes = [{
         {
         //第二个页面
           path: '/show',
-          component: () => import('../views/Show.vue'),
+          component: () => import('../views/show.vue'),
         },
         //体验
         {
