@@ -1,6 +1,6 @@
 <template>
 <div class="shopdetails">
-    <van-nav-bar title="" left-arrow @click-left="onClickLeft">
+    <van-nav-bar  title="" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
         <template #right>
             <van-icon name="cart-o" size="18" color="#000" />
         </template>
@@ -32,7 +32,7 @@
             <a href="jacascript:;">·闪电发货</a>
             <a href="jacascript:;">·贴心售后</a>
         </div>
-        <div class="fashion">
+        <div class="fashion" @click="tofashion">
             <p>款式选择</p>
             <span>10款可选</span>
             <i>></i>
@@ -108,6 +108,7 @@
         <van-goods-action-button color="#fff" style="color:#000;border-radius:0;height:100%" type="warning" text="立即购买" />
         <van-goods-action-button style="border-radius:0;height:100%" color="#000" type="danger" text="加入购物车" />
     </van-goods-action>
+    <van-sku v-model="show" :sku="sku" :goods="goods"/>
 </div>
 </template>
 
@@ -115,6 +116,7 @@
 export default {
     data() {
         return {
+            back:true,
             current: 0,
             list: [{
                     url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3769290051,364169408&fm=26&gp=0.jpg'
@@ -179,22 +181,101 @@ export default {
                 {
                     url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2985544075,2413291328&fm=26&gp=0.jpg'
                 },
-            ]
+            ],
+            show: false,
+            sku: {
+                // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
+                // 可以理解为一个商品可以有多个规格类目，一个规格类目下可以有多个规格值。
+                tree: [{
+                    k: '颜色', // skuKeyName：规格类目名称
+                    k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
+                    v: [{
+                            id: '1', // skuValueId：规格值 id
+                            name: '红色', // skuValueName：规格值名称
+                            imgUrl: 'https://img.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
+                            previewImgUrl: 'https://img.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
+                        },
+                        {
+                            id: '1',
+                            name: '蓝色',
+                            imgUrl: 'https://img.yzcdn.cn/2.jpg',
+                            previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
+                        }
+                    ],
+                    largeImageMode: true, //  是否展示大图模式
+                }],
+                // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合
+                list: [{
+                    id: 2259, // skuId
+                    s1: '1', // 规格类目 k_s 为 s1 的对应规格值 id
+                    s2: '1', // 规格类目 k_s 为 s2 的对应规格值 id
+                    price: 100, // 价格（单位分）
+                    stock_num: 110 // 当前 sku 组合对应的库存
+                }],
+                price: '1580.00', // 默认价格（单位元）
+                stock_num: 227, // 商品总库存
+                collection_id: 2261, // 无规格商品 skuId 取 collection_id，否则取所选 sku 组合对应的 id
+                none_sku: false, // 是否无规格商品
+                messages: [{
+                    // // 商品留言
+                    // datetime: '0', // 留言类型为 time 时，是否含日期。'1' 表示包含
+                    // multiple: '0', // 留言类型为 text 时，是否多行文本。'1' 表示多行
+                    // name: '留言', // 留言名称
+                    // type: 'text', // 留言类型，可选: id_no（身份证）, text, tel, date, time, email
+                    // required: '1', // 是否必填 '1' 表示必填
+                    // placeholder: '' // 可选值，占位文本
+                }],
+                hide_stock: true // 是否隐藏剩余库存
+            },
+            goods: {
+                // 默认商品 sku 缩略图
+                picture: 'https://img.yzcdn.cn/1.jpg'
+            },
+            messageConfig: {
+                // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
+                uploadImg: () => {
+                    return new Promise((resolve) => {
+                        setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+                    });
+                },
+                // 最大上传体积 (MB)
+                uploadMaxSize: 3,
+                // placeholder 配置
+                placeholderMap: {
+                    text: 'xxx',
+                    tel: 'xxx',
+
+                },
+                // 初始留言信息
+                // 键：留言 name
+                // 值：留言内容
+                initialMessages: {
+                    // 留言: '留言信息'
+                }
+            },
         };
     },
 
-    components: {},
+    components: {
+       
+    },
 
     computed: {},
 
     mounted() {},
 
     methods: {
+        tofashion() {
+            this.show = true;
+        },
         onChange(index) {
             this.current = index;
         },
         onClickLeft() {
             this.$router.go(-1)
+        },
+        onClickRight(){
+            this.$router.push('/car')
         }
     }
 };
@@ -517,10 +598,11 @@ export default {
         left: 0;
         bottom: 0;
         z-index: 10;
-        
-.van-button{
-    margin: 0;
-}
+
+        .van-button {
+            margin: 0;
+        }
+
         .van-button__content {
             border-top: 1px solid #f7f8fa;
             border-left: 1px solid #f7f8fa;

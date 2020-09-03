@@ -45,6 +45,11 @@ const routes = [{
             import ('../views/Shopdetails.vue')
     },
     {
+        path: '/car',
+        component: () =>
+            import ('../views/Car.vue')
+    },
+    {
         path: '*',
         component: () =>
             import ('../views/Nofound404.vue'),
