@@ -162,9 +162,6 @@ export default {
             font-size: 13px;
         }
     }
-<<<<<<< HEAD
- }
-=======
     .lun{
         width: 100%;
         .van-swipe{
@@ -188,7 +185,6 @@ export default {
             }
         }
     }
->>>>>>> lkx
     
-
+ }
 </style>
