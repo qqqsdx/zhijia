@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 // 添加错误的轻提示
-import { Toast } from 'vant';
+// import { Toast } from 'vant';
 
 // 可以使用自定义配置新建一个 axios 实例
 var instance = axios.create({

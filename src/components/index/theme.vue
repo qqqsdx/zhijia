@@ -22,26 +22,13 @@
     </div>
 </template>
 <script>
-// 导入图片
-import sofa  from '../../assets/img/zhuti/sofa.png'
-import bathroom  from '../../assets/img/zhuti/bathroom.png'
-import decorating  from '../../assets/img/zhuti/decorating.png'
-import kitchen  from '../../assets/img/zhuti/kitchen.png'
-import entrance  from '../../assets/img/zhuti/entrance.png'
-import rattan  from '../../assets/img/zhuti/rattan.png'
-import arts  from '../../assets/img/zhuti/arts.png'
-import cloakroom  from '../../assets/img/zhuti/cloakroom.png'
 import {getcomClassList} from '../../utils/api'
 export default {
     data() {
         return {
-            // zhutiList:[]
+            
         }
     },
-    // async mounted(){
-    // let a=await getcomClassList();
-    // this.zhutiList=a.zhutiList
-    // }
     computed: {
         zhutiList () {
             return this.$store.state.zhutiList
