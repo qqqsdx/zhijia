@@ -7,7 +7,7 @@
             </div>
             <div class="right">
                 <span>
-                   <img src="../assets/experience/gwc.png" alt="">
+                   <img :src="img5" alt="">
                 </span>
             </div>
         </div>
@@ -52,16 +52,18 @@ import img1 from '../assets/images/tu1.png'
 import img2 from '../assets/images/tu2.png'
 import img3 from '../assets/images/tu3.png'
 import img4 from '../assets/images/tu4.png'
+import img5 from '../assets/images/cart.png'
 import family from '../components/experience/family'
 export default {
     data(){
         return{
+           img5:img5,
            img1:img1,
            img2:img2,
             list:[
                 {url:img3,title:'不同的人生，不同的颜色'},
-                {url:img4,title:'不同的人生，不同的颜色'},
-                {url:img3,title:'不同的人生，不同的颜色'},
+                {url:img4,title:'永不褪色的经典高级配色。'},
+                {url:img3,title:'时间的沉淀'},
                 {url:img4,title:'不同的人生，不同的颜色'},
             ]
         }

@@ -1,0 +1,32 @@
+/* detail重置vant样式 */
+
+.tylist .van-nav-bar .van-icon {
+    color: black;
+}
+
+.tylist .van-nav-bar {
+    margin-top: 40px;
+}
+
+.tylist .van-swipe-item {
+    width: 333px;
+    height: 333px;
+}
+
+.tylist .van-swipe-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.tylist .van-swipe {
+    margin-top: 20px;
+}
+
+.tylist .van-tabs__line {
+    background: black;
+}
+
+.tylist .van-tab__text {
+    font-size: 14px;
+    color: #7F7F7F;
+}
