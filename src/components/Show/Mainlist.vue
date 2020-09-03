@@ -32,7 +32,7 @@ export default {
 
     methods: {
         todetails(){
-            this.$router.push('/details')
+            this.$router.push('/Showdetails')
         }
     }
 };

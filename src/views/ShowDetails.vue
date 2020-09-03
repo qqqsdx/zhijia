@@ -80,7 +80,7 @@ export default {
             this.$router.go(-1)
         },
         tocart() {
-            this.$router.push('/cart')
+            this.$router.push('/shopdetails')
         }
     }
 };

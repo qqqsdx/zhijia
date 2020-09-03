@@ -35,14 +35,14 @@ const routes = [{
             import ('../views/MoreAll.vue')
     },
     {
-        path: '/details',
+        path: '/showdetails',
         component: () =>
-            import ('../views/Details.vue')
+            import ('../views/Showdetails.vue')
     },
     {
-        path: '/cart',
+        path: '/shopdetails',
         component: () =>
-            import ('../views/Cart.vue')
+            import ('../views/Shopdetails.vue')
     },
     {
         path: '*',
