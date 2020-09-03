@@ -1,13 +1,13 @@
 <template>
 <div class="selection-inspiration">
-    <Navtop :title="title" :more="more"/>
-    <Navlist :der='der' :list="list"/>
+    <Mainnav :title="title" :more="more" />
+    <Mainlist :der='der' :list="list"/>
 </div>
 </template>
 
 <script>
-import Navtop from './Navtop'
-import Navlist from './Navlist'
+import Mainnav from './Mainnav'
+import Mainlist from './Mainlist'
 export default {
     data() {
         return {
@@ -43,8 +43,8 @@ export default {
     },
 
     components: {
-        Navtop,
-        Navlist
+        Mainnav,
+        Mainlist
     },
 
     computed: {},

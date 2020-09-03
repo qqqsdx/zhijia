@@ -30,9 +30,19 @@ const routes = [{
     //   component: () => import('../views/Detail.vue')
     // },
     {
-        path: '/more',
+        path: '/moreall',
         component: () =>
-            import ('../views/More.vue')
+            import ('../views/MoreAll.vue')
+    },
+    {
+        path: '/details',
+        component: () =>
+            import ('../views/Details.vue')
+    },
+    {
+        path: '/cart',
+        component: () =>
+            import ('../views/Cart.vue')
     },
     {
         path: '*',
