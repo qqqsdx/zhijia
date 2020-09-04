@@ -12,17 +12,17 @@
                         </div>
                 </template>
             </van-swipe>
-    </div>
+        </div>
     </div>
 </template>
 
 <script>
-import img3 from '../../assets/images/tu3.png'
+import url from '@/assets/images/bigimg.png'
 export default {
     data(){
         return{
               //拿到数据替换list
-        list:[{url:img3},{url:img3},{url:img3}]
+             list:[{url:url},{url:url},{url:url}]
         }
     }
 }
