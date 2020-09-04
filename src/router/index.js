@@ -91,7 +91,7 @@ const routes = [{
         component: () =>
             import ('../views/More.vue')
     },
-    // 体验模块的详情页
+    // 体验模块的列表页
     {
         path: '/tylist/:id',
         component: () =>
