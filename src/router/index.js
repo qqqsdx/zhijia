@@ -7,6 +7,17 @@ const routes = [{
     path: '/',
     redirect: '/index'
 },
+//--------------------------index服务页面子页面--------------------------------
+{
+    path: '/index/serve/:id',
+    component: () => import('../components/index/serve/serves.vue'),
+},
+//--------------------------index搜索框获焦点---------------------------------
+{
+    path: '/index/seek',
+    component: () => import('../components/index/seekbox/seek.vue'),
+},
+
 // 主题页面的商品列表--------------------------------------------------------------------------
 {
 
@@ -22,22 +33,12 @@ const routes = [{
         import('../components/goods/ThemeDetails.vue')
 
 },
-//--------------------------index服务页面子页面--------------------------------
-{
-    path: '/index/serve/:id',
-    component: () =>
-        import('../components/index/serve/serves.vue'),
-},
-//--------------------------index下的搜索框页面--------------------------------
-{
-    path: '/index/seek',
-    component: () =>
-        import('../components/index/seekbox/seek.vue'),
-},
-// ----------------------------最大的home页面----------------------------------
+
+// --------------------------------------------------------------------------------------------
 {
     path: '/home',
-    component: () => import('../views/Home.vue'),
+    component: () =>
+        import('../views/Home.vue'),
     children: [{
         // ------------------------------首页--------------------------------------
         path: '/index',
@@ -74,7 +75,12 @@ const routes = [{
         {
             path: 'theme',
             component: () =>
-                import('../components/goods/Theme.vue')
+                import('../components/goods/Theme.vue'),
+            // children: [{
+            //     path: '/themegoods',
+            //     component: () =>
+            //         import ('../components/goods/ThemeGoods.vue')
+            // }]
         }
         ]
     },
@@ -127,36 +133,32 @@ const routes = [{
 {
     name: 'agreement',
     path: '/logandreg/agreement',
-    component: () => import('../views/LogAndReg/agreement.vue'),
+    component: () =>
+        import('../views/LogAndReg/agreement.vue'),
 },
 {
     name: 'privacy',
     path: '/logandreg/privacy',
-    component: () => import('../views/LogAndReg/privacy.vue'),
+    component: () =>
+        import('../views/LogAndReg/privacy.vue'),
 },
 {
     name: 'log',
     path: '/logandreg/log',
-    component: () => import('../views/LogAndReg/log.vue'),
+    component: () =>
+        import('../views/LogAndReg/log.vue'),
 },
 {
     path: '/more',
     component: () =>
-        import('../views/More.vue')
-},
-// 体验模块的详情页
-{
-    path: '/tylist/:id',
-    component: () =>
-        import('../views/Tylist.vue')
+        import('../views/MoreAll.vue')
 },
 {
     path: '*',
     component: () =>
         import('../views/Nofound404.vue'),
 }
-] //最大的一层
-
+]
 const router = new VueRouter({
     routes
 })
@@ -177,7 +179,16 @@ const router = new VueRouter({
 //         if (to.path === redirect) {//这行是解决next无限循环的问题
 //           next()
 //         } else {
-// next({ path: redirect }) //跳转到目的路由
+//             if (Object.keys(from.query).length === 0) { //判断路由来源是否有query，处理不是目的跳转的情况
+//                 next()
+//             } else {
+//                 let redirect = from.query.redirect //如果来源路由有query
+//                 if (to.path === redirect) { //这行是解决next无限循环的问题
+//                     next()
+//                 } else {
+//                     next({ path: redirect }) //跳转到目的路由
+//                 }
+//             }
 //         }
 //     }  
 //   }

@@ -1,12 +1,12 @@
 <template>
 <div class="header">
-<van-nav-bar title="" left-text="SHOW" :border="false" fixed>
+    <van-nav-bar title="" left-text="SHOW" :border="false" fixed @click-right="onClickRight">
         <template #right>
             <van-icon name="cart-o" size="18" color="#000" />
         </template>
     </van-nav-bar>
-</div>
     
+</div>
 </template>
 
 <script>
@@ -23,11 +23,15 @@ export default {
 
     mounted() {},
 
-    methods: {}
+    methods: {
+        onClickRight() {
+            this.$router.push('/car')
+        }
+    }
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .header {
     width: 100%;
     height: 50px;

@@ -1,13 +1,13 @@
 <template>
 <div class="popular-design">
-    <Navtop :title="title" :data="list" :more="more" />
-    <Navlist :der='der' :list="list"/>
+    <Mainnav :title="title" :data="list" :more="more" />
+    <Mainlist :der='der' :list="list"/>
 </div>
 </template>
 
 <script>
-import Navtop from './Navtop'
-import Navlist from './Navlist'
+import Mainnav from './Mainnav'
+import Mainlist from './Mainlist'
 export default {
     data() {
         return {
@@ -41,8 +41,8 @@ export default {
     },
 
     components: {
-        Navtop,
-        Navlist
+        Mainlist,
+        Mainnav
     },
 
     computed: {},

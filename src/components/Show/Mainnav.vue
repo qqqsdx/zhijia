@@ -25,8 +25,8 @@ export default {
 
     methods: {
         onClickRight() {
-            this.$router.push('/more')
-        },
+            this.$router.push('/moreall')
+        }
     }
 };
 </script>
