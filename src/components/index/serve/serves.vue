@@ -2,6 +2,7 @@
     <div class="serves">
         <van-nav-bar  title="至家服务"  left-arrow @click-left='goto'>
         </van-nav-bar>
+        <main>
         <van-tabs v-model="id" title-active-color='#000' line-width='55' color='#000' :swipeable='true' :animated='true'>
             <van-tab title="设计服务">
                 <Sjfw/>
@@ -17,6 +18,7 @@
                 <Aqhb/>
             </van-tab>
         </van-tabs>
+        </main>
     </div>
 </template>
 <script>
@@ -50,3 +52,6 @@ export default {
     }
 }
 </script>
+
+<style lang='scss' scoped>
+</style>

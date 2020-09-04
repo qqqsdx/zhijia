@@ -7,6 +7,16 @@ const routes = [{
   path: '/',
   redirect: '/index'
 },
+//--------------------------index服务页面子页面--------------------------------
+{
+  path:'/index/serve/:id',
+  component: () => import('../components/index/serve/serves.vue'),
+},
+//--------------------------index搜索框获焦点---------------------------------
+{
+  path:'/index/seek',
+  component: () => import('../components/index/seekbox/seek.vue'),
+},
 {
   path: '/home',
   component: () => import('../views/Home.vue'),
@@ -15,11 +25,6 @@ const routes = [{
       //首页
       path: '/index',
       component: () => import('../views/index.vue'),
-    },
-    //--------------------------index服务页面子页面--------------------------------
-    {
-      path:'/index/serve/:id',
-      component: () => import('../components/index/serve/serves.vue'),
     },
     {
       path: '/home',

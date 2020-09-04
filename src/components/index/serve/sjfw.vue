@@ -1,6 +1,6 @@
 <template>
   <div class="sjfw">
-    <img src="../../../assets/img/anquanhuanbao.png" alt="">
+    <img src="http://adai.vip/images/index/fuwu/sjfwimg.png" alt="">
     <div class="timber">
         <h3>关于表面涂装</h3>
         <p>1. 专业软装设计师提供一对一服务。</p>
@@ -35,6 +35,7 @@
       <p>4. 购买满足条件的商品可以享受确认收货且不退货的情况下退回设计金，若无购买产品则不予退回。</p>
       <p>5. 设计方案尺寸以客户提供平面图为准，若实际尺寸与图纸尺寸出现偏差，客户需要与客服确认尺寸后再购买</p>
     </div>
+    <van-divider>至家 · 让软装决策变得简单</van-divider>
   </div>
 </template>
 

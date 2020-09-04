@@ -38,10 +38,10 @@ export default {
         return {
             images:[
                 {
-                    url:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3394847204,512220910&fm=26&gp=0.jpg'
+                    url:'http://adai.vip/images/index/lbt1.jpg'
                 },
                 {
-                    url:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3518923070,3805890162&fm=11&gp=0.jpg'
+                    url:'http://adai.vip/images/index/lbt2.jpg'
                 }
             ],
             // 开头图片上
@@ -119,6 +119,7 @@ export default {
                 height: 240px;
             }
         }
+        
         .qqq{
             width: 100%;
             height: 250px;
@@ -153,5 +154,8 @@ export default {
             width: 90%;
             margin: auto;
         }
+    }
+    .index-mains::-webkit-scrollbar {
+        display: none;
     }
 </style>

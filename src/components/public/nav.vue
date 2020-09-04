@@ -6,11 +6,22 @@
             </template>
             <template #left>
                 <!-- 导航左搜索框 -->
-                <van-search  placeholder="请输入搜索关键词"  />
+                <van-search @focus='linkseek'  placeholder="请输入搜索关键词"  />
             </template>
         </van-nav-bar>
     </div>
 </template>
+<script>
+export default {
+    methods:{
+        linkseek(){
+            this.$router.push({
+                path:`index/seek`
+            })
+        }
+    }
+}
+</script>
 <style lang='scss' scoped>
 .public-nav{
     .van-search{
