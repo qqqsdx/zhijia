@@ -1,5 +1,8 @@
+<!--主题页面商品跳转-->
+
 <template>
-    <div class="goodslist-container">
+    <div class="themegoods-container">
+        <!-- 头部 -->
         <div class="nav">
             <div class="public-nav">
                 <van-nav-bar  :fixed="true"  left-arrow @click-left="goback" placeholder>
@@ -14,17 +17,8 @@
             </div>
         </div>
 
-        <!-- 导航条 -->
-        <div class="content">
-            <van-tabs v-model="active"
-                @click="onChange"
-            >
-                <van-tab title="全部"></van-tab>
-                <van-tab title="单人沙发"></van-tab>
-                <van-tab title="多人沙发"></van-tab>
-                <van-tab title="双人沙发"></van-tab>
-            </van-tabs>
 
+        <div class="content">
             <ul>
                 <li v-for="(item,index) in 3" :key="index" 
                 @click="is=index"
@@ -34,10 +28,9 @@
                 </li>
             </ul>
         </div>
-        <router-view></router-view>
 
-        <!-- 商品列表 -->
-        <!-- <div class="goodslist">
+
+        <div class="themelist">
             <ul>
                 <li v-for="(item,index) in list" :key="index" class="van-hairline--surround">
                     <img :src="item.img" alt="">
@@ -46,11 +39,9 @@
                     <span></span>
                 </li>
             </ul>
-        </div> -->
+        </div>
     </div>
 </template>
-
-
 
 <script>
 export default {
@@ -60,83 +51,63 @@ export default {
             is:0,
             list:[
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
                 {
-                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1138660446,2644644566&fm=26&gp=0.jpg',
                     title:'豆袋懒人沙发 | 舒适坐感',
                     price:'￥97.50',
                 },
             ]
-         }
+        }
     },
     methods: {
         goback(){
             this.$router.go(-1)
         },
-        changeColor(){
-            console.log(1);
-        },
-        onChange(index){
-            // console.log(index);
-            if(index==0){
-                this.$router.replace('/goodslist/goods0')
-            }
-            if(index==1){
-                this.$router.replace('/goodslist/goods1')
-            }
-            if(index==2){
-                this.$router.replace('/goodslist/goods2')
-            }
-            if(index==3){
-                this.$router.replace('/goodslist/goods3')
-            }
-        },
     },
 }
 </script>
 
-
-
 <style lang="scss">
-.goodslist-container{
+.themegoods-container{
     .nav{
         width: 100%;
         height: 46px;
@@ -199,38 +170,38 @@ export default {
                 span{
                     font-size: 12px;
                     margin-left: 5px;
-                    color: #000000;
                 }
             }
         }
     }
-    // .goodslist{
-    //     background: #fff;
-    //     ul{
-    //         display: flex;
-    //         flex-wrap: wrap;
-    //         li{
-    //             width: 50%;
-    //             height: 200px;
-    //             display: flex;
-    //             flex-direction: column;
-    //             justify-content: center;
-    //             img{
-    //                 width: 100%;
-    //                 height: 130px;
-    //             }
-    //             p{
-    //                 font-size: 12px;
-    //                 padding-left: 10px;
-    //             }
-    //             span{
-    //                 text-align: left;
-    //                 font-size: 10px;
-    //                 padding-left: 10px;
-    //             }
-    //         }
-    //     }
-    // }
+    .themelist{
+        background: #fff;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                width: 50%;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: center;
+                img{
+                    width: 100%;
+                    height: 130px;
+                }
+                p{
+                    font-size: 12px;
+                    padding-left: 10px;
+                }
+                span{
+                    text-align: left;
+                    font-size: 10px;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+    
 }
-
 </style>

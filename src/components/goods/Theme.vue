@@ -2,7 +2,9 @@
 <template>
     <div class="theme-container">
         <ul class="theme">
-            <li v-for="(item,index) in 16" :key="index" class="van-hairline--surround">
+            <li v-for="(item,index) in 16" :key="index" class="van-hairline--surround"
+                @click="change"
+            >
                 <img src="" alt="">
                 <section>
                     <p>卧室</p>
@@ -14,7 +16,9 @@
         <div class="recommended">
             <p>主题推荐</p>
             <ul>
-                <li v-for="(item,index) in 8" :key="index" class="van-hairline--surround">
+                <li v-for="(item,index) in 8" :key="index" class="van-hairline--surround"
+                    @click="tothemedetdils"
+                >
                     <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1668542709,1580584016&fm=26&gp=0.jpg" alt="">
                     <span>家具界的百搭单品：可置物、可移动、可招待、可移动、可招待、可移动、可招待</span>
                 </li>
@@ -22,6 +26,26 @@
         </div>
     </div>
 </template>
+
+
+<script>
+export default {
+    data() {
+        return {
+            
+        }
+    },
+    methods: {
+        change(){
+            // console.log(1);
+            this.$router.push('/theme/themegoods')
+        },
+        tothemedetdils(){
+            this.$router.push('/theme/themedetails')
+        }
+    },
+}
+</script>
 
 <style lang="scss">
 .theme-container{
