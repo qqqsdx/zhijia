@@ -25,3 +25,11 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+
+/* 优惠券tab下面杠杠 */
+
+.van-tabs__line {
+    background: #000;
+    z-index: 1;
+}

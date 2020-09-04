@@ -1,7 +1,7 @@
 <template>
     <div class="Title">
         <van-nav-bar
-  title="我的优惠券"
+  title="我的收藏夹"
   left-arrow
   placeholder
   fixed

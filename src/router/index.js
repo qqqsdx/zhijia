@@ -130,6 +130,27 @@ const routes = [{
                 import ('../components/mypage/mine/discount.vue'),
 
         },
+        //"我的"页面里面的收藏页面
+        {
+            path: '/collect',
+            component: () =>
+                import ('../components/mypage/mine/collect.vue'),
+
+        },
+        //"我的"页面中的消息页面 information
+        {
+            path: '/information',
+            component: () =>
+                import ('../components/mypage/mine/information.vue'),
+
+        },
+        //"我的"页面中SHOW页面
+        {
+            path: '/myshow',
+            component: () =>
+                import ('../components/mypage/mine/myshow.vue'),
+
+        },
 
     ] //最大的一层
 
