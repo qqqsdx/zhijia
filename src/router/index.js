@@ -148,11 +148,30 @@ const routes = [{
     component: () =>
         import('../views/LogAndReg/log.vue'),
 },
+//--------------------------show页面的跳转页面------------------------------------
+{
+    path: '/moreall',
+    component: () =>import ('../views/MoreAll.vue')
+},
+{
+    path: '/showdetails',
+    component: () =>import ('../views/ShowDetails.vue')
+},
+{
+    path: '/shopdetails',
+    component: () =>import ('../views/Shopdetails.vue')
+},
+{
+    path: '/car',
+    component: () =>
+        import ('../views/Car.vue')
+},
 {
     path: '/more',
     component: () =>
         import('../views/MoreAll.vue')
 },
+//---------------------------404页面-------------------------
 {
     path: '*',
     component: () =>
