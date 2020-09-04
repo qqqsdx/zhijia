@@ -70,29 +70,24 @@ const routes = [{
         },
         //------------------------------商品路由----------------------------------------
         {
-            path: '/commodity',
-            redirect: '/commodity/content'
+          path: '/commodity',
+          redirect: '/commodity/content'
         },
         {
-            path: '/commodity',
+          path: '/commodity',
+          component: () =>
+            import('../views/Commodity.vue'),
+          children: [{
+            path: 'content',
             component: () =>
-                import('../views/Commodity.vue'),
-            children: [{
-                path: 'content',
-                component: () =>
-                    import('../components/goods/Content.vue')
-            },
-            {
-                path: 'theme',
-                component: () =>
-                    import('../components/goods/Theme.vue'),
-                // children: [{
-                //     path: '/themegoods',
-                //     component: () =>
-                //         import ('../components/goods/ThemeGoods.vue')
-                // }]
-            }
-            ]
+              import('../components/goods/Content.vue')
+          },
+          {
+            path: 'theme',
+            component: () =>
+              import('../components/goods/Theme.vue')
+          }
+          ]
         },
 
         //商品列表
@@ -196,16 +191,7 @@ const router = new VueRouter({
 //         if (to.path === redirect) {//这行是解决next无限循环的问题
 //           next()
 //         } else {
-//             if (Object.keys(from.query).length === 0) { //判断路由来源是否有query，处理不是目的跳转的情况
-//                 next()
-//             } else {
-//                 let redirect = from.query.redirect //如果来源路由有query
-//                 if (to.path === redirect) { //这行是解决next无限循环的问题
-//                     next()
-//                 } else {
-//                     next({ path: redirect }) //跳转到目的路由
-//                 }
-//             }
+                // next({ path: redirect }) //跳转到目的路由
 //         }
 //     }  
 //   }
