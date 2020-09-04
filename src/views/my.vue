@@ -3,7 +3,7 @@
     <div class="My-Wrap_top">
         <div class="top">
             <van-nav-bar left-text="我的" fixed placeholder />
-            <img class="cart" :src="cart" alt=""><!--右上角购物车图标(定位)-->
+            <img class="cart" src="http://adai.vip/images/wode/cart.png" alt=""><!--右上角购物车图标(定位)-->
         </div>
         <!--右边的是一个购物车图标 -->
         <div class="My-name">
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+
 import coupon from '../components/mypage/coupon'
 import aftersale from '../components/mypage/aftersale'
 //引入图标
@@ -77,7 +78,8 @@ export default {
             ],
             cart,
             arrow,
-            order
+            order,
+
 
         }
     },
@@ -85,13 +87,14 @@ export default {
         coupon,
         aftersale,
 
-    }
+    },
+    
 }
 </script>
 
 <style lang="scss">
 .My-wrap {
-    .My-Wrap_top {
+       .My-Wrap_top {
         background: #EDDEDE;
         width: 100%;
         // height: 280px;
@@ -148,6 +151,7 @@ export default {
                 font-weight: bold;
                 color: #000000;
                 margin-bottom: 13px;
+                margin-top:20px
             }
 
             p {

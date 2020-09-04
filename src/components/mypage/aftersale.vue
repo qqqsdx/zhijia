@@ -4,8 +4,7 @@
             <li v-for="(item,index) in after" :key="index" >
                 <span><img :src="item.icon" alt="">
                 {{item.serve}}</span>
-                <p><img class="arrows" :src="item.img" alt=""></p>
-                
+                <p><img class="arrows" :src="item.img" alt=""></p>                
             </li>
         </ul>
     </div>
