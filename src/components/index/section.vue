@@ -1,10 +1,11 @@
 <template>
     <div class="section">
         <div class="section-top">
-            <img :src="list.img1" alt="">
+            <img :src="list.imgbig" alt="">
         </div>
         <div class="section-bom">
-            <img :src="list.img2" alt="">
+            <img :src="list.imgs.imgleft" alt="">
+            <img :src="list.imgs.imgright" alt="">
         </div>
     </div>
 </template>
@@ -40,6 +41,10 @@ export default {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
+                img{
+                    width: 48%;
+                    height: 100%;
+                }
             }
         }
 </style>

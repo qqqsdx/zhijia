@@ -33,11 +33,6 @@ import Slideimg from './slideimg'
 import Choiceness from './choiceness'
 import Products from './products'
 
-// 引入图片
-import sck1 from '../../assets/img/seckillbig.png'
-import sck2 from '../../assets/img/seckillmin1.png'
-// import por2 from '../../assets/img/new por.png'
-import por1 from '../../assets/img/new productmin.png'
 export default {
     data() {
         return {
@@ -46,39 +41,44 @@ export default {
                     url:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3394847204,512220910&fm=26&gp=0.jpg'
                 },
                 {
-                    url:'https://pic.rmb.bdstatic.com/4f7d8e911be2eeb750bcb1fa8b98464e.jpeg@wm_2,t_55m+5a625Y+3L+almuWbveeahOWkqeepug==,fc_ffffff,ff_U2ltSGVp,sz_48,x_30,y_30'
-                },
-                {
                     url:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3518923070,3805890162&fm=11&gp=0.jpg'
                 }
             ],
+            // 开头图片上
             sck:{
-                img1:sck1,
-                img2:sck2
+                imgbig:'http://adai.vip/images/index/seckillbig.png',
+                imgs:{
+                    imgleft:'http://adai.vip/images/index/jjmj.png',
+                    imgright:'http://adai.vip/images/index/xrzc.png'
+                }
             },
+            //开头图片下
             por:{
-                img1:por1,
-                img2:sck2
+                imgbig:'http://adai.vip/images/index/xpys.png',
+                imgs:{
+                    imgleft:'http://adai.vip/images/index/snsq.png',
+                    imgright:'http://adai.vip/images/index/xqzs.png'
+                }
             },
             serves:[
                 {
                     text:'设计服务',
-                    icon:'photo-o',
+                    icon:'http://adai.vip/images/index/fuwu/sjfw.png',
                     ids:1
                 },
                 {
                     text:'免费送装',
-                    icon:'photo-o',
+                    icon:'http://adai.vip/images/index/fuwu/mfsz.png',
                     ids:2
                 },
                 {
                     text:'质量保证',
-                    icon:'photo-o',
+                    icon:'http://adai.vip/images/index/fuwu/zlbz.png',
                     ids:3
                 },
                 {
                     text:'安全环保',
-                    icon:'photo-o',
+                    icon:'http://adai.vip/images/index/fuwu/aqhb.png',
                     ids:4
                 },
             ]
