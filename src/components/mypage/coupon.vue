@@ -1,7 +1,7 @@
 <template>
 <div>
 <ul class="Coupon">
-    <li v-for="(item,index) in main" :key="index">
+    <li v-for="(item,index) in main" :key="index" :to="item.to" @click="onTo" >
         <p>{{item.num}}</p>
         <h3>{{item.name}}</h3>
     </li>
@@ -17,12 +17,11 @@ export default {
         return {
             main: [{
                     num: 0,
-                    name: '优惠券',
-                    
+                    name: '优惠券',                    
                 },
                 {
                     num: 0,
-                    name: '收藏'
+                    name: '收藏',
                 },
                 {
                     num: 0,
@@ -32,9 +31,15 @@ export default {
                     num: 0,
                     name: 'SHOW'
                 },
-            ]
+            ],
+            
         }
-    }
+    },
+    methods: {    
+        onTo(index){
+           this.$router.push('/discount')//跳转到优惠券页面            
+    },
+}
 }
 </script>
 
@@ -46,8 +51,9 @@ export default {
     margin: 36px 0 26px 0;
     
 
-    li {
+    >li {
         width: 25%;
+        text-align: center;
         p,h3{
             padding: 0;
             margin: 0;

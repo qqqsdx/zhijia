@@ -17,6 +17,9 @@
     width: 100%;
     height: 100%;
 }
+.experi .van-swipe-item {
+    width: 170px !important;
+}
 
 .tylist .van-swipe {
     margin-top: 20px;
@@ -29,4 +32,9 @@
 .tylist .van-tab__text {
     font-size: 14px;
     color: #7F7F7F;
+}
+.experi .van-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
