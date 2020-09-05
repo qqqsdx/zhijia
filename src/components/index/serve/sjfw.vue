@@ -35,6 +35,20 @@
       <p>4. 购买满足条件的商品可以享受确认收货且不退货的情况下退回设计金，若无购买产品则不予退回。</p>
       <p>5. 设计方案尺寸以客户提供平面图为准，若实际尺寸与图纸尺寸出现偏差，客户需要与客服确认尺寸后再购买</p>
     </div>
+    <div class="timber">
+      <h3>经典案例</h3>
+      <span>方按效果图</span>
+      <img src="http://adai.vip/images/index/sjfw/anli1.png" alt="">
+      <img src="http://adai.vip/images/index/sjfw/anli2.jpg" alt="">
+      <span>实例场景</span>
+      <div class="imgbigs">
+        <img :src="imgbig" alt="">
+        <div class="imgtab">
+          <img v-for="(item, index) in tabimgs" :key="index" :src="item" alt="" :class="{'redborder':index==active}" @click="tabs(index)">
+        </div>
+      </div>
+      
+    </div>
     <van-divider>至家 · 让软装决策变得简单</van-divider>
   </div>
 </template>
@@ -42,16 +56,35 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      tabimgs:[
+        'http://adai.vip/images/index/sjfw/shili1.png',
+        'http://adai.vip/images/index/sjfw/shili2.png',
+        'http://adai.vip/images/index/sjfw/shili3.png',
+        'http://adai.vip/images/index/sjfw/shili4.png',
+        'http://adai.vip/images/index/sjfw/shili5.png',
+        'http://adai.vip/images/index/sjfw/shili6.png'
+
+      ],
+      active:1,
+      imgbig:''
+    };
   },
 
   components: {},
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+    this.tabs(this.active)
+  },
 
-  methods: {}
+  methods: {
+    tabs(i){
+      this.active=i;
+      this.imgbig=this.tabimgs[i]
+    }
+  }
 };
 </script>
 <style lang='scss' scoped>
@@ -82,6 +115,28 @@ export default {
       }
       .btm{
         margin-bottom: 10px;
+      }
+      .imgbigs{
+        width: 100%;
+        height: 260px;
+        img{
+          width: 100%;
+          height: 200px;
+        }
+        .imgtab{
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+          img{
+            width: 50px;
+            height: 100%;
+            border: 2px solid #ffffff;
+          }
+          .redborder{
+            border-color: red;
+          }
+        }
+        
       }
       
   }

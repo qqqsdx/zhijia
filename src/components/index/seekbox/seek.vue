@@ -3,10 +3,13 @@
     <van-nav-bar  :fixed="true" right-text="取消" @click-right='goto'>
         <template #left>
             <!-- 导航左搜索框 -->
-            <van-search  placeholder="请输入搜索关键词"  />
+            <van-search  placeholder="请输入搜索关键词" @focus.stop="show = true" @blur="show = false" v-model="value"/>
         </template>
     </van-nav-bar>
-
+    <van-number-keyboard
+        :show="show"
+        v-model="value"
+    />
     <div class="hot">
         <h3>热门搜索</h3>
         <div class="hots">
@@ -20,10 +23,12 @@
 export default {
   data() {
     return {
-        hotsList:['木泽','沙发','电视柜','头层牛皮','四件套']
+        hotsList:['木泽','沙发','电视柜','头层牛皮','四件套'],
+        show: false,
+        value:'',
+        btns:[]
     };
   },
-
   components: {},
 
   computed: {},
