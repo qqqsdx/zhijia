@@ -1,7 +1,7 @@
 <template>
     <div class="choiceness">
         <h3>精选体验家</h3>
-        <div class="choiceness-top">
+        <div class="choiceness-top" @click="toExperience">
             <img src="http://adai.vip/images/index/liaojietiyanjia.png" alt="">
         </div>
         <van-swipe @change="onChange" :loop='false' :show-indicators='false' :width="152">
@@ -44,6 +44,11 @@ export default {
     onChange(index) {
       this.current = index;
     },
+    toExperience(){
+        this.$router.push({
+            path:`/experience`
+        })
+    }
   },
 };
 </script>

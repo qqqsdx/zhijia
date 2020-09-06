@@ -5,12 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        zhutiList: []
+        zhutiList: [],
+        serveId:0
     },
     mutations: {
+        //沙发卫浴小图片的接口
         getClassLists(state, payload) {
             state.zhutiList = payload.list
         },
+        setServeId(id){
+            console.log(id)
+            this.serveId=id;
+        }
     },
     actions: {
         async getComClassLists({ commit }) {

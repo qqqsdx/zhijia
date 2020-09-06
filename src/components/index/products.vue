@@ -1,6 +1,6 @@
 <template>
     <div class="products">
-        <div class="products-top">
+        <div class="products-top" @click="gotogoods">
             <img src="http://adai.vip/images/index/sofaMax.png" alt="">
         </div>
         <van-tabs active="a" :swipeable='true' line-width='24' title-active-color='#000' :animated='true' color='#000'>
@@ -220,6 +220,14 @@ export default {
             ]
         }
     },
+    methods:{
+        gotogoods(){
+            this.$router.push({
+                path: '/goodslist/goods0',
+            })
+        }
+    }
+    
 };
 </script>
 <style lang='scss' scoped>
