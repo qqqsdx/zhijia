@@ -13,6 +13,9 @@ import 'amfe-flexible'
 import Vant from "vant";
 
 import "vant/lib/index.css";
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
 Vue.use(Vant);
 Vue.config.productionTip = false
 new Vue({

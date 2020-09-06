@@ -7,6 +7,7 @@
                 <van-nav-bar  :fixed="true" >
                     <template #right>
                         <van-icon name="search" size="18" />
+                        <!-- <img src="../../assets/img/gouwuche.png" alt=""> -->
                     </template>
                     <template #left>
                         <!-- 导航左搜索框 -->

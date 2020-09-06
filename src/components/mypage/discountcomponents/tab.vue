@@ -4,27 +4,68 @@
     </div>
     <van-tabs v-model="active">
         <van-tab title="未使用">
-            <div class="discount-main" v-for="(item,index) in 6" :key="index">
+            <div class="discount-main" v-for="(item,index) in datum" :key="index">
                 <div class="main-top">
                     <div class="main-left">
-                        <p>￥15</p>
-                        <span>满49.00可用</span>
+                        <p>￥{{item.denomination}}</p>
+                        <span>满{{item. require}}可用</span>
                     </div>
                     <div class="main-right">
                         <div>
-                            <p>新人专享优惠券</p>
-                            <p>有效期至 2020-09-19</p>
+                            <p>{{item. type}}</p>
+                            <p>有效期至 {{item. indate}}</p>
                         </div>
                         <div class="btn">去使用</div>
                     </div>
                 </div>
-                <div class="main-bottom" @click="onClick(index)" v-show="show2" :class="{active:isActive===index}">详细说明</div>
-                <div class="main-bottom_one" v-show="show1" @click="onClickone(index)">新人专享优惠券</div>
+                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
+                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
             </div>
 
         </van-tab>
-        <van-tab title="已使用">暂无优惠券</van-tab>
-        <van-tab title="已过期">暂无过期优惠券</van-tab>
+        <van-tab title="已使用">
+            <div class="discount-main discount-main_used" v-for="(item,index) in used" :key="index">
+                <div class="main-top">
+                    <div class="main-left">
+                        <p>￥{{item.denomination}}</p>
+                        <span>满{{item. require}}可用</span>
+                    </div>
+                    <div class="main-right">
+                        <div>
+                            <p>{{item. type}}</p>
+                            <p>有效期至 {{item. indate}}</p>
+                        </div>
+                        <div class="btn">已使用</div>
+                    </div>
+                </div>
+                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
+                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
+            </div>
+            
+           
+
+        </van-tab>
+        <van-tab title="已过期">
+            <div class="discount-main discount-main_overdue" v-for="(item,index) in overdue" :key="index">
+                <div class="main-top">
+                    <div class="main-left">
+                        <p>￥{{item.denomination}}</p>
+                        <span>满{{item. require}}可用</span>
+                    </div>
+                    <div class="main-right">
+                        <div>
+                            <p>{{item. type}}</p>
+                            <p>有效期至 {{item. indate}}</p>
+                        </div>
+                        <div class="btn">已过期</div>
+                    </div>
+                </div>
+                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
+                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
+            </div>
+            
+               
+</van-tab>
 
     </van-tabs>
 
@@ -39,30 +80,92 @@ export default {
             show: false,
             show2: true,
             show1: false,
-            isActive: 1
+            isActive: true,
+            datum:[
+                {
+                    denomination:"15",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'49.00',//满减要求金额
+                    current:false,
+                },
+                {
+                    denomination:"25",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'100.00',//满减要求金额
+                    current:false,
+                },
+                {
+                    denomination:"70",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'750.00',//满减要求金额
+                    current:false,
+                },
+                 {
+                    denomination:"70",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'750.00',//满减要求金额
+                    current:false,
+                },
+                 {
+                    denomination:"70",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'750.00',//满减要求金额
+                    current:false,
+                },
+                
+            ],
+            used:[
+                {
+                    denomination:"20",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-09-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'49.00',//满减要求金额
+                    current:false,
+                },
+                
+            ],
+            overdue:[
+                {
+                    denomination:"200",  //面额
+                    type:'新人专享优惠券',//类型
+                    indate: '2020-08-19',//使用期限
+                    explain:'新人专享优惠券',  //详细说明
+                    require:'490.00',//满减要求金额
+                    current:false,
+                },
+                
+            ],
+
 
         };
     },
     methods: {
-        onClick(index) {
-            this.show2 = false;
-            this.show1 = true
-            console.log(index)
+        onClick(data) {
+            
         },
-        onClickone() {
-            this.show2 = true;
-            this.show1 = false
-
+        onClickone(data) {
+            
         }
     },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scope>
 @import '../../../assets/style/a.css';
 
 .tab-main {
-
+    
     .discount-main {
         //优惠券整张外围
         width: 100%;
@@ -189,11 +292,6 @@ export default {
 .tab-main[data-v-8a3282de] {
     background: #f8f8f8;
 }
-
-
-
-
-
 .van-tab__pane,
 .van-tab__pane-wrapper {
     position: fixed;
@@ -205,7 +303,27 @@ export default {
     background: #f8f8f8;
     padding-top: 15px;
 }
+
+}
+//已使用优惠券界面
+.tab-main .discount-main_used .main-top .btn {
+    background:#ddd;
+}
+//已过期优惠券面额颜色
+.tab-main .discount-main_used .main-top .main-left{
+    background:#ddd;
+
 }
 
+
+//已过期按钮颜色
+.tab-main .discount-main_overdue .main-top .btn {
+    background:#ccc;
+}
+//已过期优惠券面额颜色
+.tab-main .discount-main_overdue .main-top .main-left{
+    background:#ccc;
+
+}
 
 </style>

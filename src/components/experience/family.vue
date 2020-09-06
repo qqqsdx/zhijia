@@ -9,7 +9,8 @@
                 </van-dropdown-menu>
                 <div class="f-img" v-for="(item,index) in imglist" 
                 :key="index" >
-                    <img :src="item.imgl">
+                    <!--这边需要传入一个id  -->
+                    <img :src="item.imgl"  @click="todetail">   
                     <div class="caption">
                         <h2>{{item.title}}</h2>
                         <p>{{item.One}}</p>
@@ -49,7 +50,8 @@ export default {
                 { text: '好评排序', value: 'b' },
                 { text: '销量排序', value: 'c' },
             ],
-            imglist:[{
+            imglist:[
+            {
                 imgl:img5,
                 imgs:img,
                 title:'Siri Sun的体验家',
@@ -60,7 +62,7 @@ export default {
                 imgl:img5,
                 imgs:img,
                 title:'Siri Sun的体验家',
-                One:'现代一室一厅。108',
+                One:'轻奢 现代一室一厅.78m',
                 think:'67人想体验'
             },
             {
@@ -78,6 +80,11 @@ export default {
                 think:'67人想体验'
             },
             ]
+        }
+    },
+    methods:{
+        todetail(id){
+           this.$router.push('/tylist/'+id)
         }
     }
 }

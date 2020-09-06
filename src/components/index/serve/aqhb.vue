@@ -1,6 +1,6 @@
 <template>
   <div class="aqhb">
-    <img src="../../../assets/img/anquanhuanbao.png" alt="">
+    <img src="http://adai.vip/images/index/fuwu/aqhbimg.png" alt="">
     <div class="timber">
         <h3>关于用材</h3>
         <p>平台中80%的大件家具选用实木，家具使用天然木材，结实、耐用、绿色环保，不含人工添加剂,没有污染隐患。外观自然，纹理清晰，手感顺滑。</p>

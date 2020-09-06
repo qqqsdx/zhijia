@@ -18,7 +18,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 29px;
 
   a {
     font-weight: bold;

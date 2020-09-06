@@ -14,8 +14,11 @@
             </div>
         </div>
 
+        <!-- 导航条 -->
         <div class="content">
-            <van-tabs v-model="active">
+            <van-tabs v-model="active"
+                @click="onChange"
+            >
                 <van-tab title="全部"></van-tab>
                 <van-tab title="单人沙发"></van-tab>
                 <van-tab title="多人沙发"></van-tab>
@@ -31,6 +34,19 @@
                 </li>
             </ul>
         </div>
+        <router-view></router-view>
+
+        <!-- 商品列表 -->
+        <!-- <div class="goodslist">
+            <ul>
+                <li v-for="(item,index) in list" :key="index" class="van-hairline--surround">
+                    <img :src="item.img" alt="">
+                    <p>{{item.title}}</p>
+                    <span>{{item.price}}</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div> -->
     </div>
 </template>
 
@@ -41,7 +57,54 @@ export default {
     data() {
         return {
             active: 1,
-            is:0
+            is:0,
+            list:[
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+                {
+                    img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3660011105,278597136&fm=26&gp=0.jpg',
+                    title:'豆袋懒人沙发 | 舒适坐感',
+                    price:'￥97.50',
+                },
+            ]
          }
     },
     methods: {
@@ -50,7 +113,22 @@ export default {
         },
         changeColor(){
             console.log(1);
-        }
+        },
+        onChange(index){
+            // console.log(index);
+            if(index==0){
+                this.$router.replace('/goodslist/goods0')
+            }
+            if(index==1){
+                this.$router.replace('/goodslist/goods1')
+            }
+            if(index==2){
+                this.$router.replace('/goodslist/goods2')
+            }
+            if(index==3){
+                this.$router.replace('/goodslist/goods3')
+            }
+        },
     },
 }
 </script>
@@ -121,10 +199,38 @@ export default {
                 span{
                     font-size: 12px;
                     margin-left: 5px;
+                    color: #000000;
                 }
             }
         }
     }
+    // .goodslist{
+    //     background: #fff;
+    //     ul{
+    //         display: flex;
+    //         flex-wrap: wrap;
+    //         li{
+    //             width: 50%;
+    //             height: 200px;
+    //             display: flex;
+    //             flex-direction: column;
+    //             justify-content: center;
+    //             img{
+    //                 width: 100%;
+    //                 height: 130px;
+    //             }
+    //             p{
+    //                 font-size: 12px;
+    //                 padding-left: 10px;
+    //             }
+    //             span{
+    //                 text-align: left;
+    //                 font-size: 10px;
+    //                 padding-left: 10px;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 </style>

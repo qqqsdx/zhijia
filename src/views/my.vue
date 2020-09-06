@@ -24,16 +24,17 @@
         <div class="order">
             <p>
                 <span><img :src="order" alt=""></span>
-                <span>我的订单</span>
+                <span >我的订单</span>
             </p>
             <p>
-                <span>全部订单</span>
+                <span @click="onOrder()">全部订单</span>
                 <span><img :src="arrow" alt="" ></span>
             </p>
         </div>
         <!--待付款待发货-->
         <van-grid>
-            <van-grid-item :icon="item.icon" :text="item.event" v-for="(item,index) in wait" :key="index" />
+            <van-grid-item :icon="item.icon" :text="item.event" v-for="(item,index) in wait" :key="index"
+            :to="item.to" />
 
         </van-grid>
         <aftersale />
@@ -59,21 +60,26 @@ import order from '../assets/images/order.png' //我的订单
 export default {
     data() {
         return {
+            active:0,
             wait: [{
                     icon: payment,
-                    event: '待付款'
+                    event: '待付款',
+                    to:'/order/paid'
                 },
                 {
                     icon: delivery,
-                    event: '待发货'
+                    event: '待发货',
+                     to:'/order/shipped'
                 },
                 {
                     icon: receipt,
-                    event: '待收货'
+                     event: '待收货',
+                    to: '/order/received',
                 },
                 {
                     icon: evaluation,
-                    event: '待评价'
+                    event: '待评价',
+                    to:'/order/evaluated'
                 },
             ],
             cart,
@@ -88,6 +94,14 @@ export default {
         aftersale,
 
     },
+    methods:{
+        onOrder(){
+             this.$router.push('/order/all')
+            
+        },
+        
+
+    }
     
 }
 </script>

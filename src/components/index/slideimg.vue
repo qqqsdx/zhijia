@@ -12,7 +12,7 @@
             </van-swipe>
             <template >
                 <div class="custom-indicator">
-                {{ current + 1 }}/5
+                <i>{{ current + 1 }}</i>/5
                 </div>
             </template>
         </div>
@@ -66,11 +66,14 @@ export default {
 .slideimg{
     width: 100%;
     position: relative;
+    margin-top: 40px;
     h3{
-        padding-left: 10%;
+        padding-left: 8%;
         text-align: left;
         line-height: 30px;
-        font-size: 24px;
+        font-size: 19px;
+        margin-bottom: 32px;
+        color: #000;
     } 
     .qqq{
       width: 15%;
@@ -89,7 +92,7 @@ export default {
         }
         .title{
             width: 95%;
-            padding-left: 15px;
+            padding-left: 7px;
             height: 10%;
             margin: 0;
             text-align: left;
@@ -97,7 +100,7 @@ export default {
         }
         span{
             float: left;
-            margin-left: 15px;
+            margin-left: 7px;
             text-align: left;
             font-size: 12px;
             color: #C6C6C8;
@@ -105,10 +108,15 @@ export default {
     }
     .custom-indicator {
     position: absolute;
-    right: 5px;
+    right: 8%;
     top: 5px;
     padding: 2px 5px;
     font-size: 16px;
+    color: #A8A8AA;
+    i{
+      font-size: 20px;
+      color: #000;
+    }
     }
   }
 }

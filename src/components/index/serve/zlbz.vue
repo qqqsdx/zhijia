@@ -1,6 +1,6 @@
 <template>
   <div class="zlbz">
-    <img src="../../../assets/img/anquanhuanbao.png" alt="">
+    <img src="http://adai.vip/images/index/fuwu/zlbzimg.png" alt="">
   </div>
 </template>
 

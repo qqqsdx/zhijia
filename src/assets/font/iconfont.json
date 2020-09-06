@@ -20,6 +20,13 @@
       "unicode_decimal": 58934
     },
     {
+      "icon_id": "2681717",
+      "name": "五角星",
+      "font_class": "wujiaoxing",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
       "icon_id": "4599467",
       "name": "加号",
       "font_class": "jiahao",
@@ -30,15 +37,15 @@
       "icon_id": "7937663",
       "name": "方向-向右",
       "font_class": "fangxiang-xiangyou",
-      "unicode": "e614",
-      "unicode_decimal": 58900
+      "unicode": "e615",
+      "unicode_decimal": 58901
     },
     {
       "icon_id": "8489755",
       "name": "评论",
       "font_class": "pinglun_huabanfuben",
-      "unicode": "e615",
-      "unicode_decimal": 58901
+      "unicode": "e616",
+      "unicode_decimal": 58902
     },
     {
       "icon_id": "9810108",
@@ -46,6 +53,13 @@
       "font_class": "fenxiang_2",
       "unicode": "e52c",
       "unicode_decimal": 58668
+    },
+    {
+      "icon_id": "12184884",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e686",
+      "unicode_decimal": 59014
     }
   ]
 }

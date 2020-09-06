@@ -11,7 +11,7 @@
       
     </div>-->
     <div class="weChatLog">
-      <van-icon name="phone-o" size="20" />微信登录
+       <img src="../../assets/img/log/wechat.png" alt="" style="margin-right:10px;width:25px;height:20px"> 微信登录
     </div>
     <div class="tiaokuan">
       登灵即伐表同意至家
@@ -21,8 +21,8 @@
     <div class="other">
       第三方登录
       <van-icon name="down" />
-      <div class="weibo"></div>
-      <div class="qq"></div>
+      <img src="../../assets/img/log/weibo.png" alt="" class="weibo">
+      <img src="../../assets/img/log/qq.png" alt="" class="qq">
     </div>
   </div>
 </template>

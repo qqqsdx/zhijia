@@ -2,7 +2,7 @@
     <div class="choiceness">
         <h3>精选体验家</h3>
         <div class="choiceness-top">
-            <img src="../../assets/img/jxzhijia.png" alt="">
+            <img src="http://adai.vip/images/index/liaojietiyanjia.png" alt="">
         </div>
         <van-swipe @change="onChange" :loop='false' :show-indicators='false' :width="152">
             <van-swipe-item v-for="(item, index) in slideImg" :key="index">
@@ -51,11 +51,14 @@ export default {
 .choiceness{
     width: 100%;
     position: relative;
+    margin-top: 40px;
     h3{
-        padding-left: 10%;
+        padding-left: 8%;
         text-align: left;
         line-height: 30px;
-        font-size: 24px;
+        font-size: 19px;
+        margin-bottom: 32px;
+        color: #000;
     } 
     .choiceness-top{
         width: 80%;

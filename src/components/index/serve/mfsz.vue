@@ -1,6 +1,6 @@
 <template>
   <div class="mfsz">
-    <img src="../../../assets/img/anquanhuanbao.png" alt="">
+    <img src="http://adai.vip/images/index/fuwu/mfszimg.png" alt="">
   </div>
 </template>
 

@@ -1,23 +1,38 @@
+/* tylist重置vant样式 */
+
+.tylist .van-nav-bar .van-icon {
+    color: black;
+}
+
+.tylist .van-nav-bar {
+    margin-top: 40px;
+}
+
+.tylist .van-swipe-item {
+    width: 333px;
+    height: 333px;
+}
+
+.tylist .van-swipe-item img {
+    width: 100%;
+    height: 100%;
+}
+
 .experi .van-swipe-item {
     width: 170px !important;
 }
 
-.experi .van-dropdown-menu__title::after {
-    position: absolute;
-    top: 50%;
-    right: -0.10667rem;
-    margin-top: -0.13333rem;
-    border: 0.08rem solid;
-    border-color: transparent transparent #9A9A9A #9A9A9A;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    opacity: .8;
-    content: '';
+.tylist .van-swipe {
+    margin-top: 20px;
 }
 
-.experi .van-image {
-    width: 313px;
-    height: 209px;
+.tylist .van-tabs__line {
+    background: black;
+}
+
+.tylist .van-tab__text {
+    font-size: 14px;
+    color: #7F7F7F;
 }
 
 .experi .van-grid {
@@ -27,9 +42,9 @@
 }
 
 
-/* 优惠券tab下面杠杠 */
+/* 我的页面里tab切换 */
 
 .van-tabs__line {
     background: #000;
-    z-index: 1;
+    z-index: 0;
 }
