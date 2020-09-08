@@ -2,21 +2,21 @@
 
 <template>
     <div class="commodity-container">
-        <div class="nav">
+        <!-- <div class="nav">
             <div class="public-nav">
                 <van-nav-bar  :fixed="true" >
                     <template #right>
                         <van-icon name="search" size="18" />
-                        <!-- <img src="../../assets/img/gouwuche.png" alt=""> -->
+                        <img src="../../assets/img/gouwuche.png" alt="">
                     </template>
                     <template #left>
-                        <!-- 导航左搜索框 -->
+                        导航左搜索框
                         <van-search  placeholder="请输入搜索关键词" />
                     </template>
                 </van-nav-bar>
             </div>
-        </div>
-
+        </div> -->
+        <NAV />
 
         <!-- Tab切换 -->
         <div class="tab">
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import NAV from '../components/public/nav'
 export default {
     data() {
         return {
@@ -91,6 +92,9 @@ export default {
         },
         
     },
+    components:{
+        NAV
+    }
     
 }
 </script>
