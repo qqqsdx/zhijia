@@ -7,7 +7,7 @@
                 <van-nav-bar  :fixed="true" >
                     <template #right>
                         <van-icon name="search" size="18" />
-                        <img src="../../assets/img/gouwuche.png" alt="">
+                        <img src="../assets/img/gouwuche.png" alt="">
                     </template>
                     <template #left>
                         导航左搜索框
@@ -16,8 +16,9 @@
                 </van-nav-bar>
             </div>
         </div> -->
-        <NAV />
-
+        <div class="nav">
+            <NAV />
+        </div>
         <!-- Tab切换 -->
         <div class="tab">
             <van-tabs v-model="active" 
