@@ -1,7 +1,7 @@
 <template>
     <div class="Title">
         <van-nav-bar
-  title="我的优惠券"
+  title="SHOW"
   left-arrow
   placeholder
   fixed
@@ -11,6 +11,7 @@
     </div>
 </template>
 <script>
+
 export default {
     data(){
         return{
@@ -18,15 +19,14 @@ export default {
     },
   methods: {
       onClickLeft(){
-         this.$router.go(-1) 
-     
-   
+         this.$router.go(-1)         
       }
     
   },
+ 
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .Title{
     [class*=van-hairline]::after{
         border:none;
