@@ -102,7 +102,11 @@ export default {
 </script>
 <style lang='scss' scoped>
     .index-mains{
-        margin-top: 46px;
+        // margin-top: 46px;
+        position: absolute;
+        top: 46px; bottom: 50px;
+        left: 0; right: 0;
+        overflow: auto;
         main{
             .my-swipe .van-swipe-item {
                 color: #fff;

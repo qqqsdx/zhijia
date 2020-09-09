@@ -16,7 +16,7 @@ export default {
     methods:{
         linkseek(){
             this.$router.push({
-                path:`index/seek`
+                path:`/index/seek`
             })
         }
     }

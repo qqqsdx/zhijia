@@ -29,7 +29,7 @@ export default {
     width: 100%;
     height: 140px;
     padding: 0 18px;
-    margin-top: 50px;
+    // margin-top: 50px;
 
     img {
         height: 99px;

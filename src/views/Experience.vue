@@ -86,7 +86,7 @@ export default {
     margin: auto;
     background: #fff;
     .title{
-        margin-top: 48px;
+        // margin-top: 48px;
         width: 100%;
         height: 20px;
         display: flex;

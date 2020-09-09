@@ -1,7 +1,7 @@
 <template>
   <div class="serves">
     <van-nav-bar title="至家服务" left-arrow @click-left="goto" :fixed="true" />
-    <main>
+    <main :class="{'sjfss':id==0}">
       <div>
         <van-tabs
           v-model="id"
@@ -28,7 +28,7 @@
           </van-tab>
         </van-tabs>
       </div>
-      <div class="sjserve">
+      <div class="sjserve" v-if="id==0">
         <div class="width90">
           <h3>我需要设计服务</h3>
           <van-field center clearable placeholder="怎么称呼">
@@ -92,8 +92,11 @@ export default {
     left: 0;
     right: 0;
     top: 46px;
-    bottom: 240px;
+    bottom: 0px;
     overflow: auto;
+  }
+  .sjfss{
+    bottom: 240px;
   }
   main::-webkit-scrollbar {
     display: none;
