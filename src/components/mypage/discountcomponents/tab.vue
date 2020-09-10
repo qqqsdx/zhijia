@@ -18,8 +18,8 @@
                         <div class="btn">去使用</div>
                     </div>
                 </div>
-                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
-                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
+                <div class="main-bottom" @click.stop="onClick(index)"  v-show="true" >详细说明</div>
+                <div class="main-bottom_one" v-if="show ===index" @click="onClickone(item)" >{{item.explain}}</div>
             </div>
 
         </van-tab>
@@ -38,8 +38,8 @@
                         <div class="btn">已使用</div>
                     </div>
                 </div>
-                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
-                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
+                <div class="main-bottom" v-show="true" @click="onClick(index)"  >详细说明</div>
+                <div class="main-bottom_one" v-if="show===index" @click="onClickone(index)">{{item.explain}}</div>
             </div>
             
            
@@ -60,8 +60,8 @@
                         <div class="btn">已过期</div>
                     </div>
                 </div>
-                <div class="main-bottom" @click="onClick()" v-show="show2" >详细说明</div>
-                <div class="main-bottom_one" v-show="show1" @click="onClickone()">{{item.explain}}</div>
+                <div class="main-bottom" @click="onClick(index)" v-show="true" >详细说明</div>
+                <div class="main-bottom_one" v-if="show===index" @click="onClickone(index)">{{item.explain}}</div>
             </div>
             
                
@@ -77,9 +77,7 @@ export default {
     data() {
         return {
             active: 0,
-            show: false,
-            show2: true,
-            show1: false,
+            show:-1,
             isActive: true,
             datum:[
                 {
@@ -88,40 +86,35 @@ export default {
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'49.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                 {
                     denomination:"25",  //面额
                     type:'新人专享优惠券',//类型
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'100.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                 {
                     denomination:"70",  //面额
                     type:'新人专享优惠券',//类型
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'750.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                  {
                     denomination:"70",  //面额
                     type:'新人专享优惠券',//类型
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'750.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                  {
                     denomination:"70",  //面额
                     type:'新人专享优惠券',//类型
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'750.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                 
             ],
             used:[
@@ -131,8 +124,7 @@ export default {
                     indate: '2020-09-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'49.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                 
             ],
             overdue:[
@@ -142,8 +134,7 @@ export default {
                     indate: '2020-08-19',//使用期限
                     explain:'新人专享优惠券',  //详细说明
                     require:'490.00',//满减要求金额
-                    current:false,
-                },
+                                    },
                 
             ],
 
@@ -151,11 +142,11 @@ export default {
         };
     },
     methods: {
-        onClick(data) {
-            
+        onClick(index) {
+            this.show=index  
         },
-        onClickone(data) {
-            
+        onClickone(index) {        
+            this.show=false           
         }
     },
 };

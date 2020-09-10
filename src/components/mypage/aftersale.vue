@@ -1,8 +1,10 @@
 <template>
     <div class="Aftersale">
         <ul>
-            <li v-for="(item,index) in after" :key="index" >
-                <span><img :src="item.icon" alt="">
+            <li v-for="(item,index) in after" :key="index"  @click="onclick(index)" >
+                <span><img :src="item.icon" alt=""
+               
+                >
                 {{item.serve}}</span>
                 <p><img class="arrows" :src="item.img" alt=""></p>                
             </li>
@@ -24,7 +26,8 @@ export default {
                {
                    icon:aftersales,
                    serve:'我的售后',
-                   img:arrow
+                   img:arrow,
+                   
                },
                
                {
@@ -51,7 +54,23 @@ export default {
 
            ] 
         }
-    }
+    },
+     methods: {    
+        onclick(index){
+            if(index===0){
+           this.$router.push('/after')//跳转到我的售后页面
+           }if(index===1){
+               this.$router.push('/appointment')//跳转到我的预约页面
+           }if(index===2){
+               this.$router.push('/aaddress')//跳转到地址管理页面
+           }if(index===3){
+               this.$router.push('/customer')//跳转到至家客服页面   
+           }if(index===4){
+               this.$router.push('/setting')}//跳转到设置页面
+               
+               
+    },
+}
 }
 </script>
 <style lang="scss">

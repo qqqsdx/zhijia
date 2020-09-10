@@ -122,7 +122,7 @@ export default {
         }
     .van-nav-bar {
         // background: transparent;
-        opacity: 0.5;
+         background: #EDDEDE;
         height: 46px;
          //我的导航距离顶部的距离
     }

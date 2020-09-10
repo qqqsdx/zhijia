@@ -160,7 +160,47 @@ const routes = [{
             import ('../components/mypage/mine/myshow.vue'),
 
     },
+
+    //-----------------------------"我的"页面中我的售后页面-----------------------------
+    {
+        path: '/after',
+        component: () =>
+            import ('../components/mypage/mine/after.vue'),
+
+    },
+    //-----------------------------"我的"页面中我的预约页面-----------------------------
+    {
+        path: '/appointment',
+        component: () =>
+            import ('../components/mypage/mine/appointment.vue'),
+
+    },
+    //-----------------------------"我的"页面中地址管理页面-----------------------------
+    {
+        path: '/aaddress',
+        component: () =>
+            import ('../components/mypage/mine/aaddress.vue'),
+
+    },
+    //-----------------------------"我的"页面中至家客服页面-----------------------------
+    {
+        path: '/customer',
+        component: () =>
+            import ('../components/mypage/mine/customer.vue'),
+
+    },
+    //-----------------------------"我的"页面中设置页面-----------------------------
+    {
+        path: '/setting',
+        component: () =>
+            import ('../components/mypage/mine/setting.vue'),
+
+    },
+
+
+
     //-----------------------------"我的"页面中我的订单页面-----------------------------
+
     {
         path: '/order',
         component: () =>
