@@ -1,8 +1,8 @@
 <template>
     <div class="public-nav">
         <van-nav-bar  :fixed="true" >
-            <template #right>
-                <img src="../../assets/img/gouwuche.png" alt="">
+            <template #right >
+                <img @click="car" src="../../assets/img/gouwuche.png" alt="">
             </template>
             <template #left>
                 <!-- 导航左搜索框 -->
@@ -17,6 +17,11 @@ export default {
         linkseek(){
             this.$router.push({
                 path:`/index/seek`
+            })
+        },
+        car(){
+            this.$router.push({
+                path:`/car`
             })
         }
     }

@@ -2,8 +2,9 @@
     <div class="index-mains">
         <main>
             <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-                <van-swipe-item v-for="(item, index) in images" :key="index">
-                    <img :src="item.url" alt="">
+                <van-swipe-item >
+                   <img src="../../assets/img/lbt1.jpg" alt="">
+                   <img src="../../assets/img/lbt2.jpg" alt="">
                 </van-swipe-item>
             </van-swipe>
             <Sections :list='sck' />
@@ -32,32 +33,38 @@ import Theme from './theme'
 import Slideimg from './slideimg'
 import Choiceness from './choiceness'
 import Products from './products'
-
+//图片限时秒杀等
+import xsms from '../../assets/img/xsms.png'
+import jjmj from '../../assets/img/jjmj.png'
+import xrzc from '../../assets/img/xrzc.png'
+import xpys from '../../assets/img/xpys.png'
+import snsq from '../../assets/img/snsq.png'
+import xqzs from '../../assets/img/xqzs.png'
 export default {
     data() {
         return {
             images:[
                 {
-                    url:'http://adai.vip/images/index/lbt1.jpg'
+                    url:'http://adai.vip/img/lbt1.86987052.jpg'
                 },
                 {
-                    url:'http://adai.vip/images/index/lbt2.jpg'
+                    url:'http://adai.vip/img/lbt2.878012f7.jpg'
                 }
             ],
             // 开头图片上
             sck:{
-                imgbig:'http://adai.vip/images/index/seckillbig.png',
+                imgbig:'http://adai.vip/img/xsms.323ca085.png',
                 imgs:{
-                    imgleft:'http://adai.vip/images/index/jjmj.png',
-                    imgright:'http://adai.vip/images/index/xrzc.png'
+                    imgleft:'http://adai.vip/img/jjmj.872513c5.png',
+                    imgright:'http://adai.vip/img/xrzc.92317510.png'
                 }
             },
             //开头图片下
             por:{
-                imgbig:'http://adai.vip/images/index/xpys.png',
+                imgbig:'http://adai.vip/img/xpys.f8448f6c.png',
                 imgs:{
-                    imgleft:'http://adai.vip/images/index/snsq.png',
-                    imgright:'http://adai.vip/images/index/xqzs.png'
+                    imgleft:'http://adai.vip/img/snsq.551b8f6f.png',
+                    imgright:'http://adai.vip/img/xqzs.752b406e.png'
                 }
             },
             serves:[

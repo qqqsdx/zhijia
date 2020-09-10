@@ -3,14 +3,14 @@
         <h3>主题推荐</h3>
         <div class="theme-recommend">
             <div class="recommends" v-for="(item, index) in zhutiList" :key="index">
-                <div class="recommends-left">
-                    <img :src="item.left.imgs" alt="">
+                <div class="recommends-left" @click="zhutileft(item.left.id)">
+                    <img :src="item.left.imgs" alt="" >
                     <div class="recommends-left-name">
                         <h5>{{item.left.name}}</h5>
                         <span>{{item.left.ename}}</span>
                     </div>
                 </div>
-                <div class="recommends-right">
+                <div class="recommends-right" @click="zhutiright(item.right.id)">
                     <img :src="item.right.imgs" alt="">
                     <div class="recommends-right-name">
                         <h5>{{item.right.name}}</h5>
@@ -37,6 +37,14 @@ export default {
     mounted() {
         this.$store.dispatch('getComClassLists')
     },
+    methods:{
+        zhutileft(id){
+            console.log(id)
+        },
+        zhutiright(id){
+            console.log(id)
+        }
+    }
 }
 </script>
 <style lang='scss' scoped>
